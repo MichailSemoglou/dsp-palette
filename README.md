@@ -1,5 +1,7 @@
 # DSP Palette
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20092216.svg)](https://doi.org/10.5281/zenodo.20092216)
+
 Code and evaluation data for the paper:
 
 > Michail Semoglou, "Distinctness-First Palette Extraction for Accessible Design Systems," submitted to _APSIPA ASC 2026_, Track IVM.
@@ -58,6 +60,22 @@ Pre-computed results are already included in `results/` for inspection without r
 
 ```bash
 pytest tests/
+```
+
+## Citation
+
+If you use this code or data, please cite:
+
+```bibtex
+@software{semoglou_dsp_palette_2026,
+  author    = {Semoglou, Michail},
+  title     = {{DSP Palette: Distinctness-First Palette Extraction for Accessible Design Systems}},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {1.0.0},
+  doi       = {10.5281/zenodo.20092216},
+  url       = {https://doi.org/10.5281/zenodo.20092216}
+}
 ```
 
 ## License
