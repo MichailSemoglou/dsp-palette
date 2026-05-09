@@ -35,6 +35,11 @@ corpus/photographs_train/
 # mode_comparison_diagnostic.pdf is kept — it is a pipeline diagnostic output.
 figures/fig*.pdf
 
+# Paper-specific LaTeX source fragments and caption drafts
+figures/fig1_method.tex
+figures/fig1_method_body.tex
+figures/fig2_caption.md
+
 # LaTeX build artifacts
 *.aux
 *.bbl
