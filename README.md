@@ -31,7 +31,7 @@ results/
   raw/                # per-image evaluation JSONs (N = 115)
   aggregated/         # CSV summaries used in the paper
   summary_for_paper.md
-figures/              # PDF figures and LaTeX table sources
+figures/              # LaTeX table sources and pipeline diagnostic figure
 tests/                # unit tests
 ```
 
