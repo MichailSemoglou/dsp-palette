@@ -1,0 +1,33 @@
+{
+  "title": "DSP Palette: Distinctness-First Palette Extraction for Accessible Design Systems",
+  "description": "Code and evaluation data for Distinctness-First Palette Selection (DSP), a constrained greedy algorithm that selects perceptually distinct, WCAG-accessible color palettes from images. Companion repository to the paper presented at APSIPA ASC 2026.",
+  "creators": [
+    {
+      "name": "Semoglou, Michail",
+      "affiliation": "College of Design and Innovation, Tongji University",
+      "orcid": "0009-0003-3268-5657"
+    }
+  ],
+  "keywords": [
+    "color palette extraction",
+    "CIELAB",
+    "WCAG accessibility",
+    "design tokens",
+    "perceptual distinctness",
+    "color quantization",
+    "image processing",
+    "Python"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "version": "1.0.0",
+  "publication_date": "2026-05-08",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/MichailSemoglou/dsp-palette",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

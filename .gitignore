@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Corpus images (large files; not part of DOI snapshot — use corpus/download.py)
+corpus/photographs/
+corpus/photographs_train/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+
+# Paper figures (PDFs included in the companion paper; not duplicated here)
+# mode_comparison_diagnostic.pdf is kept — it is a pipeline diagnostic output.
+figures/fig*.pdf
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
