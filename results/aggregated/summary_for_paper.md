@@ -8,7 +8,7 @@ _Generated automatically from N=115 COCO corpus (90 val2017 + 25 train2017 check
 - **Effect size:** Cliff's δ (DSP − baseline direction; positive = DSP tends higher).
 - **DSP vs k-Means RGB, WCAG AA Coverage:** two-tailed p=0.066 (not significant at α=0.05). The directional one-tailed test gives p=0.033, but the paper reports two-tailed throughout. This comparison is noted in text but **not marked** with asterisks in figures or tables.
 - **Bonferroni correction** (12 baseline × metric comparisons, α=0.05/12 ≈ 0.004): all min ΔE₂₀₀₀ comparisons, all reconstruction comparisons, and the WCAG AA/k-Means Lab comparison (p=0.0002) remain significant. The WCAG AA/Median Cut comparison (p=0.004) sits at the corrected threshold. The WCAG AA/k-Means RGB comparison (p=0.066) was already non-significant. Harmony alignment comparisons remain non-significant under correction.
-- **β/α invariance:** Selection is empirically invariant to β/α ∈ [0.1, 10] (spread < 1 ΔE₂₀₀₀ on N=30 images). All results use α=β=1.0. See `research/dsp/selector.py` docstring for structural explanation.
+- **β/α invariance:** Selection is empirically invariant to β/α ∈ [0.25, 4] (spread < 1 ΔE₂₀₀₀ on N=30 images). All results use α=β=1.0. See `research/dsp/selector.py` docstring for structural explanation.
 
 ## 1. Corpus Composition
 
@@ -76,9 +76,6 @@ All tests two-tailed. Cliff's δ = (DSP − baseline) direction; positive means 
 | k-Means Lab | WCAG AA Coverage uparrow         | 383.5  | 6.60e-04 | +0.3109   | small      | \*\*\* |
 | k-Means RGB | WCAG AA Coverage uparrow         | 512.0  | 1.04e-01 | +0.0932   | negligible | ns     |
 | Median Cut  | WCAG AA Coverage uparrow         | 603.0  | 2.11e-02 | +0.2000   | small      | \*     |
-| k-Means Lab | wcag_aaa_coverage                | 194.5  | 2.76e-04 | +0.2997   | small      | \*\*\* |
-| k-Means RGB | wcag_aaa_coverage                | 375.5  | 6.35e-02 | +0.1474   | small      | ns     |
-| Median Cut  | wcag_aaa_coverage                | 500.0  | 5.28e-03 | +0.2763   | small      | \*\*   |
 
 ## 4. Per-Image Win Counts (DSP vs Baselines on min ΔE2000)
 
@@ -106,14 +103,14 @@ All tests two-tailed. Cliff's δ = (DSP − baseline) direction; positive means 
 | 4    | coco_000000553339 | 17.067     | 0.300  | 6.562    | 0.509   |
 | 5    | coco_000000236690 | 17.135     | 0.400  | 6.807    | 0.159   |
 
-## 7. Figure 2 Selected Images
+## 6. Figure 2 Selected Images
 
 - **Colourful image**: `coco_000000288762` (mean L\*=73.6, min ΔE=37.77, recon=13.02)
 - **High-variance image**: `coco_000000021465` (mean L\*=48.1, min ΔE=31.80, recon=17.12)
 - **Low-chroma image**: `coco_000000117645` (mean L\*=55.5, min ΔE=11.28, recon=2.92)
 - **Dark image (mode=auto)**: `coco_000000438304` (mean L\*=34.7, min ΔE=33.44, recon=10.14)
 
-## 8. Metric Definitions
+## 7. Metric Definitions
 
 **ΔE₂₀₀₀ (CIE 2000 colour difference):** Computed using the CIEDE2000 formula with standard weighting factors k*L=k_C=k_H=1.0. Reference: CIE 142-2001, *Improvement to Industrial Colour-Difference Evaluation*, Commission Internationale de l'Éclairage, Vienna, 2001. Implementation: `colour.delta_E(..., method='CIE 2000')` from colour-science 0.4.4.
 **WCAG AA contrast ratio:** Relative luminance Y computed as per W3C WCAG 2.1 §1.4.3 (linearise sRGB channel c: c/12.92 if c≤0.04045, else ((c+0.055)/1.055)^2.4; then Y = 0.2126R + 0.7152G + 0.0722B). Contrast ratio = (Y_lighter + 0.05) / (Y_darker + 0.05). AA pass threshold: ratio ≥ 4.5 (normal text). WCAG AA Coverage = fraction of ordered colour pairs in the palette that meet this threshold. Reference: W3C, *Web Content Accessibility Guidelines (WCAG) 2.1*, https://www.w3.org/TR/WCAG21/, 2018.
@@ -121,7 +118,7 @@ All tests two-tailed. Cliff's δ = (DSP − baseline) direction; positive means 
 **Reconstruction error (ΔE₂₀₀₀):** For each pixel in the image, find the nearest palette colour in CIELAB Euclidean distance, then compute ΔE₂₀₀₀ between the pixel and that palette colour. Reconstruction error = mean over all pixels. Lower is better (palette captures the image colours faithfully).
 **Mean L\* (mode threshold):** Pixel-wise mean of the L\* channel after converting the full image from sRGB → XYZ → CIELAB (D65, `colour.sRGB_to_XYZ` + `colour.XYZ_to_Lab`). Computed before palette extraction. Images with mean L\* < 40 are assigned mode=dark, else mode=light.
 
-## 9. Runtime (Wall-Clock, Single Core)
+## 8. Runtime (Wall-Clock, Single Core)
 
 Measured on Apple M3 Max (36 GB RAM), Python 3.12.3, single-threaded. 5 repeats per image × 4 representative Fig 2 images (sizes 640×425, 500×281, 640×480, 464×640). Values are mean wall-clock time per image (ms).
 
