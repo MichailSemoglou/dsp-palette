@@ -25,7 +25,7 @@ import numpy as np
 from PIL import Image
 from scipy.spatial import KDTree
 
-from research.dsp.metrics import (
+from dsp.metrics import (
     min_pairwise_delta_e,
     wcag_pair_coverage,
     reconstruction_error_de2000,
@@ -34,10 +34,10 @@ from research.dsp.metrics import (
     WCAG_AA_NORMAL,
     WCAG_AAA_NORMAL,
 )
-from research.dsp.roles import assign_roles
-from research.dsp.selector import select_palette
-from research.baselines import median_cut, kmeans_rgb, kmeans_lab, colorthief_baseline
-from research.evaluation.corpus_loader import CorpusLoader
+from dsp.roles import assign_roles
+from dsp.selector import select_palette
+from baselines import median_cut, kmeans_rgb, kmeans_lab, colorthief_baseline
+from evaluation.corpus_loader import CorpusLoader
 
 logger = logging.getLogger(__name__)
 
@@ -177,9 +177,9 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
     parser = argparse.ArgumentParser(description="Run palette evaluation on corpus")
-    parser.add_argument("--manifest", default="research/corpus/manifest.json")
-    parser.add_argument("--corpus-root", default="research/corpus/")
-    parser.add_argument("--results-dir", default="research/results/raw/")
+    parser.add_argument("--manifest", default="corpus/manifest.json")
+    parser.add_argument("--corpus-root", default="corpus/")
+    parser.add_argument("--results-dir", default="results/raw/")
     parser.add_argument("--n", type=int, default=5)
     parser.add_argument("--subset", default=None, help="Only run on a specific subset")
     parser.add_argument("--force", action="store_true",

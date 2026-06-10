@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\caption{Ablation: mean $\pm$ std over $N=75$ COCO test images. A1--A4 are defined in Section~\ref{sec:ablation}; A3 is full DSP, kML$+$c the constraint-matched k-Means Lab baseline. Markers (Wilcoxon signed-rank, two-tailed) compare each condition against full DSP, Bonferroni-corrected over $20$ comparisons ($\alpha_c = 0.05/20$): $^{***}p < \alpha_c/10$, $^{**}p < \alpha_c$, $^*p < 0.05$, $^{\mathrm{ns}}$not significant.}
+\label{tab:ablation}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrr}
+\hline\hline
+Cond.\ & Min $\Delta E_{2000}$ $\uparrow$ & WCAG AA $\uparrow$ & Recon.\ $\Delta E_{2000}$ $\downarrow$ & Harmony $\uparrow$ \\
+\hline
+A1 & 25.093{\scriptsize$\,\pm$5.418}$^{\mathrm{ns}}$ & 0.331{\scriptsize$\,\pm$0.090}$^{\mathrm{ns}}$ & 9.742{\scriptsize$\,\pm$3.409}$^{\mathrm{ns}}$ & 0.462{\scriptsize$\,\pm$0.154}$^{\mathrm{ns}}$ \\
+A2 & 25.093{\scriptsize$\,\pm$5.418}$^{\mathrm{ns}}$ & 0.331{\scriptsize$\,\pm$0.090}$^{\mathrm{ns}}$ & 9.742{\scriptsize$\,\pm$3.409}$^{\mathrm{ns}}$ & 0.462{\scriptsize$\,\pm$0.154}$^{\mathrm{ns}}$ \\
+\textbf{A3} & 24.921{\scriptsize$\,\pm$5.642} & 0.331{\scriptsize$\,\pm$0.090} & 9.783{\scriptsize$\,\pm$3.428} & 0.462{\scriptsize$\,\pm$0.153} \\
+A4 & 13.325{\scriptsize$\,\pm$3.258}$^{\mathrm{***}}$ & 0.285{\scriptsize$\,\pm$0.123}$^{\mathrm{*}}$ & 8.067{\scriptsize$\,\pm$3.092}$^{\mathrm{***}}$ & 0.448{\scriptsize$\,\pm$0.175}$^{\mathrm{ns}}$ \\
+
+\hline
+kML$+$c & 22.906{\scriptsize$\,\pm$5.343}$^{\mathrm{***}}$ & 0.291{\scriptsize$\,\pm$0.100}$^{\mathrm{*}}$ & 8.560{\scriptsize$\,\pm$2.808}$^{\mathrm{***}}$ & 0.436{\scriptsize$\,\pm$0.170}$^{\mathrm{ns}}$ \\
+\hline\hline
+\end{tabular}%
+}
+\end{table}

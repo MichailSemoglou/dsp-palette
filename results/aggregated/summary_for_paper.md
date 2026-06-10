@@ -6,8 +6,8 @@ _Generated automatically from N=115 COCO corpus (90 val2017 + 25 train2017 check
 
 - **All p-values are two-tailed** Wilcoxon signed-rank tests (paired, one-sample on DSP − baseline differences).
 - **Effect size:** Cliff's δ (DSP − baseline direction; positive = DSP tends higher).
-- **DSP vs k-Means RGB, WCAG AA Coverage:** two-tailed p=0.066 (not significant at α=0.05). The directional one-tailed test gives p=0.033, but the paper reports two-tailed throughout. This comparison is noted in text but **not marked** with asterisks in figures or tables.
-- **Bonferroni correction** (12 baseline × metric comparisons, α=0.05/12 ≈ 0.004): all min ΔE₂₀₀₀ comparisons, all reconstruction comparisons, and the WCAG AA/k-Means Lab comparison (p=0.0002) remain significant. The WCAG AA/Median Cut comparison (p=0.004) sits at the corrected threshold. The WCAG AA/k-Means RGB comparison (p=0.066) was already non-significant. Harmony alignment comparisons remain non-significant under correction.
+- **DSP vs k-Means RGB, WCAG AA Coverage:** two-tailed p=0.013 (significant at α=0.05 but does not survive Bonferroni correction, α_corrected ≈ 0.004). Marked * in figures but not ** in tables.
+- **Bonferroni correction** (12 baseline × metric comparisons, α=0.05/12 ≈ 0.004): all min ΔE₂₀₀₀ comparisons, all reconstruction comparisons, the WCAG AA/k-Means Lab comparison (p=1.8e-05), and the WCAG AA/Median Cut comparison (p=0.0014) survive correction. The WCAG AA/k-Means RGB comparison (p=0.013) is nominally significant but does not survive Bonferroni correction. Harmony alignment comparisons remain non-significant under correction.
 - **β/α invariance:** Selection is empirically invariant to β/α ∈ [0.25, 4] (spread < 1 ΔE₂₀₀₀ on N=30 images). All results use α=β=1.0. See `research/dsp/selector.py` docstring for structural explanation.
 
 ## 1. Corpus Composition
@@ -35,10 +35,10 @@ _Generated automatically from N=115 COCO corpus (90 val2017 + 25 train2017 check
 
 | Method      | Mean   | Std    | Median |
 | ----------- | ------ | ------ | ------ |
-| DSP         | 0.3173 | 0.0964 | 0.3000 |
+| DSP         | 0.3307 | 0.0900 | 0.3000 |
 | k-Means Lab | 0.2613 | 0.1077 | 0.3000 |
 | k-Means RGB | 0.3000 | 0.1151 | 0.3000 |
-| Median Cut  | 0.2693 | 0.1585 | 0.3000 |
+| Median Cut  | 0.2667 | 0.1545 | 0.3000 |
 
 ### Recon. Delta E\_{2000} downarrow
 
@@ -73,9 +73,9 @@ All tests two-tailed. Cliff's δ = (DSP − baseline) direction; positive means 
 | k-Means Lab | Recon. Delta E\_{2000} downarrow | 0.0    | 0.00e+00 | +0.6050   | large      | \*\*\* |
 | k-Means RGB | Recon. Delta E\_{2000} downarrow | 12.0   | 0.00e+00 | +0.5516   | large      | \*\*\* |
 | Median Cut  | Recon. Delta E\_{2000} downarrow | 260.0  | 0.00e+00 | +0.4265   | medium     | \*\*\* |
-| k-Means Lab | WCAG AA Coverage uparrow         | 383.5  | 6.60e-04 | +0.3109   | small      | \*\*\* |
-| k-Means RGB | WCAG AA Coverage uparrow         | 512.0  | 1.04e-01 | +0.0932   | negligible | ns     |
-| Median Cut  | WCAG AA Coverage uparrow         | 603.0  | 2.11e-02 | +0.2000   | small      | \*     |
+| k-Means Lab | WCAG AA Coverage uparrow        | 249.0  | 1.80e-05 | +0.3797   | medium     | \*\*\* |
+| k-Means RGB | WCAG AA Coverage uparrow        | 401.0  | 1.30e-02 | +0.1591   | small      | \*     |
+| Median Cut  | WCAG AA Coverage uparrow        | 408.5  | 1.41e-03 | +0.2633   | small      | \*\*   |
 
 ## 4. Per-Image Win Counts (DSP vs Baselines on min ΔE2000)
 

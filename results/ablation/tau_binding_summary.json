@@ -1,0 +1,16 @@
+{
+  "tau_dist": 10.0,
+  "n_palette": 5,
+  "n_images": 75,
+  "total_rejections_across_all_images_and_slots": 26196,
+  "images_with_at_least_one_rejection": 75,
+  "images_with_zero_rejections": 0,
+  "rejections_per_slot_totals": {
+    "1": 0,
+    "2": 4552,
+    "3": 6064,
+    "4": 7234,
+    "5": 8346
+  },
+  "a1_equals_a2_all_images": true
+}

@@ -8,9 +8,9 @@ Code and evaluation data for the paper:
 
 ## Abstract
 
-Design systems need color palettes that are perceptually distinct and WCAG-accessible by construction — requirements that k-means clustering and median-cut quantization cannot meet because they optimize solely for reconstruction fidelity. This paper introduces **Distinctness-First Palette Selection (DSP)**, a constrained greedy algorithm that selects _n_ colors by jointly maximizing perceptual coverage (log-frequency and minimum ΔE₂₀₀₀) while enforcing a hard inter-color separation threshold τ and a post-selection WCAG AA contrast check. A heuristic assigns each color a semantic role (Surface, On-Surface, Primary, Secondary, Accent) suited to contemporary design-token schemas.
+Design systems need color palettes that are perceptually distinct and carry a guaranteed WCAG AA-compliant Surface/On-Surface pair: k-means clustering and median-cut quantization cannot meet these requirements because they optimize solely for reconstruction fidelity. This paper introduces **Distinctness-First Palette Selection (DSP)**, a constrained greedy algorithm that selects _n_ colors by maximizing minimum pairwise ΔE₂₀₀₀ (perceptual distinctness) while enforcing a hard inter-color separation threshold τ and a post-selection WCAG AA contrast check. A heuristic assigns each color a semantic role (Surface, On-Surface, Primary, Secondary, Accent) suited to contemporary design-token schemas.
 
-Evaluated on a held-out test set of _N_ = 75 COCO photographs, DSP achieves a mean minimum ΔE₂₀₀₀ of **24.9 ± 5.6** against 14.1 ± 4.9, 12.4 ± 3.8, and 7.2 ± 3.9 for k-Means Lab, k-Means RGB, and Median Cut respectively (all _p_ < 0.001, Wilcoxon signed-rank; Cliff's δ > 0.84, large effect in every case).
+Evaluated on a held-out test set of _N_ = 75 COCO photographs under four metrics, DSP achieves a mean minimum ΔE₂₀₀₀ of **24.9 ± 5.6** against 14.1 ± 4.9, 12.4 ± 3.8, and 7.2 ± 3.9 for k-Means Lab, k-Means RGB, and Median Cut respectively (all _p_ < 0.001, Wilcoxon signed-rank; Cliff's δ > 0.84, large effect in every case). WCAG AA coverage improves significantly over k-Means Lab and Median Cut (both _p_ < 0.004, Bonferroni-corrected); the gain over k-Means RGB is nominally significant (_p_ = 0.013) but does not survive Bonferroni correction. Rankings hold on a disjoint 25-image COCO train2017 set. Reconstruction error is higher by design: the method trades pixel-level fidelity for perceptual spread. DSP is available as open-source software with a persistent DOI and a reproducible evaluation corpus.
 
 ## Installation
 
@@ -29,9 +29,9 @@ corpus/
   download.py         # script to fetch COCO images
 results/
   raw/                # per-image evaluation JSONs (N = 115)
-  aggregated/         # CSV summaries used in the paper
-  summary_for_paper.md
-figures/              # LaTeX table sources and pipeline diagnostic figure
+  aggregated/         # CSV summaries and summary_for_paper.md
+tables/               # standalone LaTeX table sources (Tables 1–3)
+figures/              # pipeline diagnostic figure
 tests/                # unit tests
 ```
 

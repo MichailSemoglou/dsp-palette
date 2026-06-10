@@ -1,7 +1,7 @@
 ,min_pairwise_de2000,min_pairwise_de2000,min_pairwise_de2000,wcag_aa_coverage,wcag_aa_coverage,wcag_aa_coverage,wcag_aaa_coverage,wcag_aaa_coverage,wcag_aaa_coverage,reconstruction_error_de2000,reconstruction_error_de2000,reconstruction_error_de2000,harmony_alignment,harmony_alignment,harmony_alignment
 ,mean,median,std,mean,median,std,mean,median,std,mean,median,std,mean,median,std
 method,,,,,,,,,,,,,,,
-dsp,24.9207,25.0071,5.6423,0.3173,0.3,0.0964,0.1733,0.2,0.0794,9.7828,9.7213,3.4282,0.462,0.4818,0.1533
+dsp,24.9207,25.0071,5.6423,0.3307,0.3,0.09,0.1733,0.2,0.0794,9.7828,9.7213,3.4282,0.462,0.4818,0.1533
 kmeans_lab,14.0673,13.5151,4.8964,0.2613,0.3,0.1077,0.1293,0.1,0.0882,6.4801,6.679,2.0899,0.4155,0.4289,0.1683
 kmeans_rgb,12.3826,12.5535,3.7908,0.3,0.3,0.1151,0.1547,0.1,0.0934,6.7512,7.005,2.293,0.4264,0.4782,0.181
-median_cut,7.1824,6.7899,3.8937,0.2693,0.3,0.1585,0.1333,0.1,0.1408,7.6157,7.5074,2.4838,0.4213,0.443,0.1812
+median_cut,7.1824,6.7899,3.8937,0.2667,0.3,0.1545,0.1333,0.1,0.1408,7.6157,7.5074,2.4838,0.4213,0.443,0.1812

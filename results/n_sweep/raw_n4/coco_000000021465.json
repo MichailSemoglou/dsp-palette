@@ -1,0 +1,216 @@
+{
+  "image_id": "coco_000000021465",
+  "n": 4,
+  "methods": {
+    "dsp": {
+      "palette_rgb": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          8,
+          4,
+          3
+        ],
+        [
+          190,
+          93,
+          80
+        ],
+        [
+          59,
+          123,
+          175
+        ]
+      ],
+      "palette_hex": [
+        "#ffffff",
+        "#080403",
+        "#be5d50",
+        "#3b7baf"
+      ],
+      "frequencies": [
+        0.14933807829181495,
+        0.23511743772241994,
+        0.24572953736654804,
+        0.3698149466192171
+      ],
+      "roles": {
+        "0": "surface",
+        "1": "on-surface",
+        "3": "primary",
+        "2": "secondary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 41.08251366429408,
+        "wcag_aa_coverage": 0.6666666666666666,
+        "wcag_aaa_coverage": 0.16666666666666666,
+        "reconstruction_error_de2000": 18.00611408018932,
+        "harmony_alignment": 0.09770296311965855,
+        "runtime_seconds": 0.2738880419992711
+      },
+      "wcag_guaranteed": true,
+      "wcag_replacement_applied": false,
+      "wcag_distinctness_compromised": false,
+      "candidate_pool_size": 256,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "tau_dist": 10.0
+    },
+    "median_cut": {
+      "palette_rgb": [
+        [
+          122,
+          130,
+          140
+        ],
+        [
+          168,
+          201,
+          216
+        ],
+        [
+          25,
+          59,
+          82
+        ],
+        [
+          85,
+          66,
+          64
+        ]
+      ],
+      "palette_hex": [
+        "#7a828c",
+        "#a8c9d8",
+        "#193b52",
+        "#554240"
+      ],
+      "frequencies": [
+        0.27127402135231315,
+        0.2589964412811388,
+        0.24165124555160142,
+        0.22807829181494663
+      ],
+      "roles": {
+        "1": "surface",
+        "2": "on-surface",
+        "0": "primary",
+        "3": "secondary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 21.737198774528864,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.0,
+        "reconstruction_error_de2000": 12.506170648866254,
+        "harmony_alignment": 0.30719942253142957,
+        "runtime_seconds": 0.11437775000013062
+      }
+    },
+    "kmeans_rgb": {
+      "palette_rgb": [
+        [
+          162,
+          199,
+          220
+        ],
+        [
+          136,
+          127,
+          124
+        ],
+        [
+          53,
+          44,
+          44
+        ],
+        [
+          46,
+          83,
+          109
+        ]
+      ],
+      "palette_hex": [
+        "#a2c7dc",
+        "#887f7c",
+        "#352c2c",
+        "#2e536d"
+      ],
+      "frequencies": [
+        0.2757508896797153,
+        0.25516725978647686,
+        0.24038434163701067,
+        0.22869750889679716
+      ],
+      "roles": {
+        "0": "surface",
+        "2": "on-surface",
+        "1": "primary",
+        "3": "secondary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 22.39015401318023,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.16666666666666666,
+        "reconstruction_error_de2000": 11.971571543122929,
+        "harmony_alignment": 0.23951641537323168,
+        "runtime_seconds": 0.036165708000226005
+      }
+    },
+    "kmeans_lab": {
+      "palette_rgb": [
+        [
+          135,
+          127,
+          116
+        ],
+        [
+          168,
+          200,
+          223
+        ],
+        [
+          40,
+          79,
+          118
+        ],
+        [
+          69,
+          50,
+          44
+        ]
+      ],
+      "palette_hex": [
+        "#877f74",
+        "#a8c8df",
+        "#284f76",
+        "#45322c"
+      ],
+      "frequencies": [
+        0.25550889679715305,
+        0.2776512455516014,
+        0.21822775800711744,
+        0.24861209964412812
+      ],
+      "roles": {
+        "1": "surface",
+        "3": "on-surface",
+        "0": "primary",
+        "2": "secondary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 25.68674072088849,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.0,
+        "reconstruction_error_de2000": 11.829856675270204,
+        "harmony_alignment": 0.44974151300814996,
+        "runtime_seconds": 0.05763850000039383
+      }
+    }
+  },
+  "image_mean_L": 48.13616220720986,
+  "subset": "photographs",
+  "filename": "000000021465.jpg"
+}

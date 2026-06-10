@@ -1,0 +1,184 @@
+{
+  "image_id": "coco_000000119516",
+  "n": 3,
+  "methods": {
+    "dsp": {
+      "palette_rgb": [
+        [
+          67,
+          58,
+          50
+        ],
+        [
+          245,
+          248,
+          253
+        ],
+        [
+          187,
+          128,
+          90
+        ]
+      ],
+      "palette_hex": [
+        "#433a32",
+        "#f5f8fd",
+        "#bb805a"
+      ],
+      "frequencies": [
+        0.9411409543325527,
+        0.018402371194379392,
+        0.040456674473067916
+      ],
+      "roles": {
+        "0": "surface",
+        "1": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 34.1664619454092,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 9.9349248624958,
+        "harmony_alignment": 0.1480033293672742,
+        "runtime_seconds": 0.3226838750006209
+      },
+      "wcag_guaranteed": true,
+      "wcag_replacement_applied": false,
+      "wcag_distinctness_compromised": false,
+      "candidate_pool_size": 256,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "tau_dist": 10.0
+    },
+    "median_cut": {
+      "palette_rgb": [
+        [
+          65,
+          54,
+          40
+        ],
+        [
+          41,
+          35,
+          29
+        ],
+        [
+          100,
+          92,
+          77
+        ]
+      ],
+      "palette_hex": [
+        "#413628",
+        "#29231d",
+        "#645c4d"
+      ],
+      "frequencies": [
+        0.45536080210772834,
+        0.4224787763466042,
+        0.12216042154566745
+      ],
+      "roles": {
+        "1": "surface",
+        "2": "on-surface",
+        "0": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 7.540720272204238,
+        "wcag_aa_coverage": 0.0,
+        "wcag_aaa_coverage": 0.0,
+        "reconstruction_error_de2000": 8.590330761258464,
+        "harmony_alignment": 0.192319439318305,
+        "runtime_seconds": 0.23486283400052343
+      }
+    },
+    "kmeans_rgb": {
+      "palette_rgb": [
+        [
+          75,
+          61,
+          48
+        ],
+        [
+          37,
+          35,
+          28
+        ],
+        [
+          189,
+          185,
+          171
+        ]
+      ],
+      "palette_hex": [
+        "#4b3d30",
+        "#25231c",
+        "#bdb9ab"
+      ],
+      "frequencies": [
+        0.48434572599531617,
+        0.47241656908665103,
+        0.043237704918032784
+      ],
+      "roles": {
+        "1": "surface",
+        "2": "on-surface",
+        "0": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 11.429493242166698,
+        "wcag_aa_coverage": 0.6666666666666666,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 8.16808432913893,
+        "harmony_alignment": 0.6609187347425357,
+        "runtime_seconds": 0.056099417000041285
+      }
+    },
+    "kmeans_lab": {
+      "palette_rgb": [
+        [
+          69,
+          57,
+          41
+        ],
+        [
+          35,
+          33,
+          34
+        ],
+        [
+          182,
+          175,
+          159
+        ]
+      ],
+      "palette_hex": [
+        "#453929",
+        "#232122",
+        "#b6af9f"
+      ],
+      "frequencies": [
+        0.5305620608899297,
+        0.42157860070257613,
+        0.047859338407494144
+      ],
+      "roles": {
+        "1": "surface",
+        "2": "on-surface",
+        "0": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 12.846747075070144,
+        "wcag_aa_coverage": 0.6666666666666666,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 8.264539047635205,
+        "harmony_alignment": 0.10362424342029897,
+        "runtime_seconds": 0.15488504200038733
+      }
+    }
+  },
+  "image_mean_L": 23.05046324942161,
+  "subset": "photographs",
+  "filename": "000000119516.jpg"
+}

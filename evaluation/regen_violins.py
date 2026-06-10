@@ -12,7 +12,7 @@ import pandas as pd
 from scipy import stats
 
 # Add repo root to path
-sys.path.insert(0, str(Path(__file__).parents[2]))
+sys.path.insert(0, str(Path(__file__).parents[1]))
 
 METHOD_ORDER = ["dsp", "kmeans_lab", "kmeans_rgb", "median_cut"]
 METHOD_COLORS = {
@@ -54,17 +54,41 @@ def _sig_marker(p: float) -> str:
 def _add_significance_bracket(ax, x1, x2, y, h, marker, color="#333333", fontsize=8):
     ax.plot([x1, x1, x2, x2], [y, y + h, y + h, y], lw=0.8, c=color, clip_on=False)
     ax.text(
-        (x1 + x2) / 2, y + h + 0.01 * (ax.get_ylim()[1] - ax.get_ylim()[0]),
+        (x1 + x2) / 2, y + h + 0.003 * (ax.get_ylim()[1] - ax.get_ylim()[0]),
         marker, ha="center", va="bottom", fontsize=fontsize, color=color,
     )
 
 
-# Load updated data
-tidy_df = pd.read_csv("research/results/aggregated/tidy_results.csv")
-wtest_df = pd.read_csv("research/results/aggregated/wilcoxon_tests.csv")
+# Load updated data — filter to the 75-image held-out test set only
+# (excludes the 15 dev-set images used for parameter selection)
+_manifest = json.loads(
+    (Path(__file__).parents[1] / "corpus" / "manifest.json").read_text()
+)
+_test_ids = {
+    e["id"]
+    for e in _manifest
+    if e["subset"] == "photographs" and not e.get("dev", False)
+}
 
-print(f"tidy_df: {len(tidy_df)} rows, {tidy_df['image_id'].nunique()} images")
-print(f"wtest_df: {len(wtest_df)} rows")
+tidy_df = pd.read_csv("results/aggregated/tidy_results.csv")
+tidy_df = tidy_df[tidy_df["image_id"].isin(_test_ids)].copy()
+
+# Recompute Wilcoxon tests on the correct N=75 test set
+_dsp = tidy_df[tidy_df["method"] == "dsp"]
+_records = []
+for _bl in [m for m in METHOD_ORDER if m != "dsp"]:
+    _bl_df = tidy_df[tidy_df["method"] == _bl]
+    for _metric in METRIC_COLS:
+        _d = _dsp.set_index("image_id")[_metric]
+        _b = _bl_df.set_index("image_id")[_metric]
+        _shared = _d.index.intersection(_b.index)
+        _diff = (_d[_shared] - _b[_shared]).dropna()
+        _stat, _p = stats.wilcoxon(_diff)
+        _records.append({"method": _bl, "metric": _metric, "p_value": _p})
+wtest_df = pd.DataFrame(_records)
+
+print(f"tidy_df: {len(tidy_df)} rows, {tidy_df['image_id'].nunique()} images (test set only)")
+print(f"wtest_df: {len(wtest_df)} rows (recomputed on N=75)")
 
 methods = [m for m in METHOD_ORDER if m in tidy_df["method"].unique()]
 n_metrics = len(METRIC_COLS)
@@ -141,7 +165,7 @@ for ax, metric in zip(axes, METRIC_COLS):
                 fontsize=7, color="#888888", style="italic",
             )
 
-output = Path("research/figures/fig2_violins.pdf")
+output = Path("figures/fig2_violins.pdf")
 output.parent.mkdir(parents=True, exist_ok=True)
 fig.savefig(output, dpi=180, bbox_inches="tight", facecolor="white")
 plt.close(fig)

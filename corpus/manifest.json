@@ -7,7 +7,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000001503.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "06c721f0a62bcb9fcb2d2d0cc0b9edd63092084a8773a18c4b5a7bd6fb4f095d",
     "dev": true
   },
   {
@@ -18,7 +18,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000001532.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "974f2af6d81f65627a680ea9f42bdee1067a0ddcdb9f8e7a945bacd21d4dc2ce",
     "dev": true
   },
   {
@@ -29,7 +29,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000001761.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "c06b1845c54bb886a8fb9f8a6e908b29ceb661ffda1ca8df9a27f123806de648",
     "dev": true
   },
   {
@@ -40,7 +40,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000002006.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "eda4af13818b566f8fa4f479e76286ad90cd5da2e8dfd530be0ab3637e1482ed",
     "dev": true
   },
   {
@@ -51,7 +51,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000002149.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "3ef0da375244c3fdbb45bcfe5689e8e46fb616c00250f9dce6aa34d301801ac5",
     "dev": true
   },
   {
@@ -62,7 +62,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000002261.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "1a0ad595a5675bdc7a5e95c04def56109c00d61168fd826158322fd538d70279",
     "dev": true
   },
   {
@@ -73,7 +73,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000002431.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "fa0ce7b066c2fe7bd0892aa2c6361943148db9766de60241e69d8026a18e05ad",
     "dev": true
   },
   {
@@ -84,7 +84,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000002473.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "2f1bfa7634a64f7999ba5488ec904ad1f85bbc63d0fe4b9fe35f52abbf8c5f4f",
     "dev": true
   },
   {
@@ -95,7 +95,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000002592.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "ffa3d472d44184b1f48878f7b097189723e57a24f36c44c29e4bc561110fbf41",
     "dev": true
   },
   {
@@ -106,7 +106,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000003501.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "9615e4dc9099e860748ce3f839ed077fa6a1fa39a10b909c00600bf4e2b3f392",
     "dev": true
   },
   {
@@ -117,7 +117,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000003661.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "8746b068c166782f4b4fb7e6be9d16e5311e9c15bc867e21409b7f5d2eddefb4",
     "dev": true
   },
   {
@@ -128,7 +128,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000004134.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "2c922f6ec30f9c4eca2b373c8808f63979c26f4d89242754b3576bf78db1108b",
     "dev": true
   },
   {
@@ -139,7 +139,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000004395.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "14ffbd7ab7a01e0dd7fc9676a688bd2c916766e2edb6e1d12ac9ae0ed07b122a",
     "dev": true
   },
   {
@@ -150,7 +150,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000004765.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "90fab997d1351b1c2ae1a437689245f962dbfa58e577911c9c83991490aadc5e",
     "dev": true
   },
   {
@@ -161,7 +161,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000005037.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "b47318f2a6f652027f6435c462fae0567d925f67ab3279d08d5da2f322322dda",
     "dev": true
   },
   {
@@ -172,7 +172,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000005060.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "5d3d8315695f7c718b649c06afe32c792bcce9d4a97f544fc1ba19bc592d8cd3",
     "dev": false
   },
   {
@@ -183,7 +183,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000007281.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "57f3508e600d3370320487dde8665f208f11612a11caac0801c7f5fc19188ac3",
     "dev": false
   },
   {
@@ -194,7 +194,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000008277.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "692fc5469af5fffdc0dac05e709a0ac1380dca32d4c57436903b122f3c3558dc",
     "dev": false
   },
   {
@@ -205,7 +205,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000021465.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "ceb0a4848d7dea0d9c0576a91a8f8c9e93a9a090efbb3e6f641a9c327e7c679c",
     "dev": false
   },
   {
@@ -216,7 +216,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000028449.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "520039fa3e2dad9a09632c7f5c5babb2ac30ce78137d3d140372ea6d43cd3ff2",
     "dev": false
   },
   {
@@ -227,7 +227,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000033854.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "b86eeebe566cee1e853f153675db94ba23d6642956f29ea473804c7852cb6b37",
     "dev": false
   },
   {
@@ -238,7 +238,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000035279.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "ad30a4335a65035ef96c5503151ea47370e6f66e65b70a44c26ed1c4d580df95",
     "dev": false
   },
   {
@@ -249,7 +249,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000069106.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "8cd75e90da41fdb33c6d810f6bd566f43f71110bb208c29e74f04c4cbbcc7f20",
     "dev": false
   },
   {
@@ -260,7 +260,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000075393.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "b8b012e4b160e2487c81d4a3a851cb4bd184f4654393c0cf6b15c54317b0e512",
     "dev": false
   },
   {
@@ -271,7 +271,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000085329.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "6f51ea5ea5be7df989ac264225486516e39c1cf90fe8a9e01b83c62a26a44f6e",
     "dev": false
   },
   {
@@ -282,7 +282,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000090062.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "9817cac2a13efa5bb8cb41194ebf96c30141c4bb7b890470c6472073c262bc78",
     "dev": false
   },
   {
@@ -293,7 +293,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000101022.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "0962336a1c3f6e1598c88577eeffc50a20b2c00ef14cf70dccc70b9d0d511528",
     "dev": false
   },
   {
@@ -304,7 +304,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000104666.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "f3b813cb53d01a8ee122ea206701331b742732dedf1743803121d002187d4be4",
     "dev": false
   },
   {
@@ -315,7 +315,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000107226.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "285a3dfd666d35fb60eb63b9dd46b7b49aae4fcafe194f51d7e4b446abdab725",
     "dev": false
   },
   {
@@ -326,7 +326,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000117645.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "b6ceb52f4df09d31630a04a012e61a6be6f4dd7b9b7e4ee6a63eb37edb16c514",
     "dev": false
   },
   {
@@ -337,7 +337,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000119516.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "ee4d278eecc42f9c6830e030207fbabe888aebb36c58681f034f27081594d8c9",
     "dev": false
   },
   {
@@ -348,7 +348,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000145020.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "1f17b0e0bbeed6314959106da960aa8239eca859ed9016bd408eb7a1afad8e04",
     "dev": false
   },
   {
@@ -359,7 +359,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000161128.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "4698f1cd6364d17702a85bb16dc91c0059429baf5f37bf7fcb848138f1c7035b",
     "dev": false
   },
   {
@@ -370,7 +370,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000162543.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "5faf38e79bcafcbd4ee7ac0ab9a193d9a2d652918a176951f592938ab2c6f8e2",
     "dev": false
   },
   {
@@ -381,7 +381,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000166287.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "8c1e01146df6e51a43b12bedd7913834d5ed8f91031924a964e915a74cc9f72d",
     "dev": false
   },
   {
@@ -392,7 +392,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000168974.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "e994ae206640b01c19f9eb73c9f9231e73057fb09292bb152de9a884bd1837a7",
     "dev": false
   },
   {
@@ -403,7 +403,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000169169.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "d267375dc1802876eeafb14a9da413bf1f2f9bd802a1645ebbf3c58a41520cf5",
     "dev": false
   },
   {
@@ -414,7 +414,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000184400.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "9b81bd50fee18dfe4f1b1aa804c28f0492bd65d4c1f1c43b7497b8a82e0eb2b1",
     "dev": false
   },
   {
@@ -425,7 +425,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000186632.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "a9e150a34b0f76252c2049857ed88f94368ae45ebbff65e3bfccb3a2b49ae82c",
     "dev": false
   },
   {
@@ -436,7 +436,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000187249.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "56fa45f1e2d627d0bf4f4f0e6c133659783d22b0a56979227f803bfd3056b153",
     "dev": false
   },
   {
@@ -447,7 +447,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000190923.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "3407447c4e8ca2ceb0db4ba1cb97dee1547e63fb3499cb67d6813ac5d4275d3c",
     "dev": false
   },
   {
@@ -458,7 +458,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000213035.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "2fcdee02314b94646786fa56e5fdc29acfe65c7a45d72281a4add71f2da93c7b",
     "dev": false
   },
   {
@@ -469,7 +469,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000228214.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "dd24f50472dc948697cb66405c8aef531004c239d7fedbdb3587b74a0ea52c94",
     "dev": false
   },
   {
@@ -480,7 +480,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000233370.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "1f8d859e83e946b2a76a3a69cd57e2a622b77751bda91bff79461e87f29732a0",
     "dev": false
   },
   {
@@ -491,7 +491,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000236690.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "2a82fdfe3bae9f17210f39512c8e3d0b4391b793bf0f2b5a178ba87bb597b7ae",
     "dev": false
   },
   {
@@ -502,7 +502,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000244379.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "029f82371473d89dffb58f32866ee7dbf8b9cf528f55864873e15d890e05d05d",
     "dev": false
   },
   {
@@ -513,7 +513,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000252216.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "4d1e6e1342d3ec42bd4aa18e64e0a3c3fd928c093730c8cc62212d89724dec90",
     "dev": false
   },
   {
@@ -524,7 +524,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000255749.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "6b7e93b3bddf3c69af9f2411c46d7b3321ca0eebb18009c8476eb8f620ebd1a6",
     "dev": false
   },
   {
@@ -535,7 +535,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000262487.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "7525f3c0ab2654ac3e766966e84a4501cb5f3c0134aec18daaab62f77abc1441",
     "dev": false
   },
   {
@@ -546,7 +546,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000275791.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "84cc0e75770f49df4ef6ba2abb374870ee8ad54d95f5f1d08dc94012191edf26",
     "dev": false
   },
   {
@@ -557,7 +557,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000281693.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "e26a646c09883c33aa0708148e1cb7b9eea596702087f5bb62a31787eae5763c",
     "dev": false
   },
   {
@@ -568,7 +568,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000283520.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "631a6472e729f091315113046e821686b1cace4b7d63f6d4d097b481af546665",
     "dev": false
   },
   {
@@ -579,7 +579,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000284106.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "c6e2d69d67f6c87377d64f761b3312293b7c2112d1714b5bf726b1aace24fef8",
     "dev": false
   },
   {
@@ -590,7 +590,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000288762.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "bfbff0617f67c1873a04bea40363431dcc53ad95f2c38470ed8a9f1aef98e52b",
     "dev": false
   },
   {
@@ -601,7 +601,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000294163.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "dc0459f553ed6eb3e5ad12d27dfaff4c9e5063ce7124ddf70f3d286d404dfafa",
     "dev": false
   },
   {
@@ -612,7 +612,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000300233.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "5130ea550f77c6f36a22e196d7cc96a00b54c2700fbc0db25aae53115a2e5e51",
     "dev": false
   },
   {
@@ -623,7 +623,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000307145.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "74de35efa219ad138add25da4682981fa8a7b41edd2b33c9ea808c3a3342074c",
     "dev": false
   },
   {
@@ -634,7 +634,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000315187.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "29fcdb959434fddb1f1d11716cf3fd57d3d73310567b9be43046533a00fbd235",
     "dev": false
   },
   {
@@ -645,7 +645,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000334977.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "a1cceafdd22140509b8d925a6c9d34d0376a45284d94748a94de905bbc570866",
     "dev": false
   },
   {
@@ -656,7 +656,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000335427.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "ea30c8058f6f658dc75d14c252eb0ddaba2b2a796164756585d208b9669cb2fa",
     "dev": false
   },
   {
@@ -667,7 +667,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000346232.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "377ffb9cf36c1f830c8dbee3bd7157fe91ec90f5eaee8485a8f3a1afd975e81f",
     "dev": false
   },
   {
@@ -678,7 +678,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000369037.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "d6ff29e1dce6399b303c6cfa2a10934c0c2ff8286480147b43ec20ddbe1b179b",
     "dev": false
   },
   {
@@ -689,7 +689,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000371472.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "fb236fc376abd9564731a290666c32ed25e44a4db8158fb4c0c7d597b1b1beee",
     "dev": false
   },
   {
@@ -700,7 +700,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000380706.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "e3437ddefb08ddb3c39c90c3cde5311cf9ddbc02c541d27c97eaa69a753445bc",
     "dev": false
   },
   {
@@ -711,7 +711,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000393093.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "624c5f297bf60acc8e87553772a60cdd580b108560d8e0a02eaba8cdc8bdbb33",
     "dev": false
   },
   {
@@ -722,7 +722,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000393115.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "810ec9c453a1e857b7c555a5b52b31c1e754a61a2b6d944c59f52fc870448a48",
     "dev": false
   },
   {
@@ -733,7 +733,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000396729.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "f815b8ad8426092561e56192e016682dbc1faa70676dc18bdfee97f62638040b",
     "dev": false
   },
   {
@@ -744,7 +744,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000403584.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "2393ceaf53e25a0142c9ae3ede9e2d6369c6fab030987bb984e0e00cd3c80e81",
     "dev": false
   },
   {
@@ -755,7 +755,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000412286.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "2c482d365623b18f877b90eea879331d4d11f8c9f8b13f058aa8cb1ef31cb58d",
     "dev": false
   },
   {
@@ -766,7 +766,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000418961.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "6081d03d55c5a52e4cf944db4a33b85c5d10c4cde34a1bca134a3360720a78e2",
     "dev": false
   },
   {
@@ -777,7 +777,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000423506.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "cf770793ec543c39c2c6331e6658a08738d0a576cc9f1fe8995d711eae97ce71",
     "dev": false
   },
   {
@@ -788,7 +788,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000437205.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "735b2dc4367938696a7ff75fc27c684534f651b61e6f8d2cf6ef46ce7fb7d667",
     "dev": false
   },
   {
@@ -799,7 +799,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000438304.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "64ab6a5556b022cbd398d98cd5bb243a4ee6e4ea6e3285f433eb78b76b53fd4e",
     "dev": false
   },
   {
@@ -810,7 +810,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000440171.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "fc83614277d84eafe90c292704f5bc7597a2965c6b394bd36dea92bd481a4058",
     "dev": false
   },
   {
@@ -821,7 +821,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000453341.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "703bb682af684144d492dcd45f65cea99fe5e65312f93b03d54ee90a3be24553",
     "dev": false
   },
   {
@@ -832,7 +832,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000462031.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "8059a11f475358b739c2dc5463a37e4c98abde68584fe4331ac8eaeaa79b8ce6",
     "dev": false
   },
   {
@@ -843,7 +843,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000462371.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "027938e6e266da5bab7d7c7f7da109aa15c251bf1a85b8bd845467435a8be3c9",
     "dev": false
   },
   {
@@ -854,7 +854,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000464522.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "fd665a61d5de25752dc89976ad567b9e9c8459c47a24563c1de293e1a4f0a7b4",
     "dev": false
   },
   {
@@ -865,7 +865,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000470779.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "d85ff30a9bd3d7fcf36a4deee3500bc289c37489f081c367a98ba1435ed92314",
     "dev": false
   },
   {
@@ -876,7 +876,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000494759.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "ca8c33b86326b47fadd9fd6315f355ec0c3f9ec58aa06f021c31aa81168d9d9d",
     "dev": false
   },
   {
@@ -887,7 +887,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000503841.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "60806be017b08f1f691ecb116db30fe320da97e3be0dbf6f69d9fdd4fae65573",
     "dev": false
   },
   {
@@ -898,7 +898,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000512330.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "a97b7899f984d8cbb9505b659cb428c3654a4a7d3505178036e316926c73f0b6",
     "dev": false
   },
   {
@@ -909,7 +909,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000524742.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "ccbc60599ee97b4da768a190f0d4402aebfdcb72d67edd2cd9c6077d31b1aa96",
     "dev": false
   },
   {
@@ -920,7 +920,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000537355.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "497191b79f23912175f939e0753c564afff22451073f61cc78786a048c94dc13",
     "dev": false
   },
   {
@@ -931,7 +931,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000542625.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "96bcf0e82d56c029bbb5f440727dbd0daf156a14327a5a83d6fd68ba67f62712",
     "dev": false
   },
   {
@@ -942,7 +942,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000542856.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "9bd2d9be44355c59e3599f1f5ddcfc06bf8209a0f24b655538e891ae6a4b3fcf",
     "dev": false
   },
   {
@@ -953,7 +953,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000544811.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "3c22bb5ba0aa5ea20ed6428b147515cb19afa06d47dc6cc5b5e64d07e448f897",
     "dev": false
   },
   {
@@ -964,7 +964,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000553339.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "d0d0281cbc1de4973486173f0c36fdbed7cde3e43d5c9b7728101922ecaa7848",
     "dev": false
   },
   {
@@ -975,7 +975,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000554735.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "07c970316625f141017caa1385ee6c8ba59576b50c78f675940dc09ddc62f1c4",
     "dev": false
   },
   {
@@ -986,7 +986,7 @@
     "original_url": "http://images.cocodataset.org/val2017/000000575372.jpg",
     "license": "CC BY 4.0",
     "download_date": "2026-05-04",
-    "sha256": null,
+    "sha256": "2eaaea81c0c535a013ce38e00aa5baa95e429dca5bd2d13d3b780911b5ae4ea5",
     "dev": false
   },
   {

@@ -1,0 +1,184 @@
+{
+  "image_id": "coco_000000228214",
+  "n": 3,
+  "methods": {
+    "dsp": {
+      "palette_rgb": [
+        [
+          233,
+          233,
+          233
+        ],
+        [
+          5,
+          2,
+          9
+        ],
+        [
+          55,
+          115,
+          103
+        ]
+      ],
+      "palette_hex": [
+        "#e9e9e9",
+        "#050209",
+        "#377367"
+      ],
+      "frequencies": [
+        0.29501019813519813,
+        0.4272435897435897,
+        0.27774621212121214
+      ],
+      "roles": {
+        "0": "surface",
+        "1": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 38.37914905241319,
+        "wcag_aa_coverage": 0.6666666666666666,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 10.996161137148482,
+        "harmony_alignment": 0.2619687589298425,
+        "runtime_seconds": 0.27694691600027
+      },
+      "wcag_guaranteed": true,
+      "wcag_replacement_applied": false,
+      "wcag_distinctness_compromised": false,
+      "candidate_pool_size": 256,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "tau_dist": 10.0
+    },
+    "median_cut": {
+      "palette_rgb": [
+        [
+          25,
+          21,
+          27
+        ],
+        [
+          199,
+          214,
+          212
+        ],
+        [
+          119,
+          139,
+          136
+        ]
+      ],
+      "palette_hex": [
+        "#19151b",
+        "#c7d6d4",
+        "#778b88"
+      ],
+      "frequencies": [
+        0.4880645396270396,
+        0.2671037296037296,
+        0.24483173076923076
+      ],
+      "roles": {
+        "1": "surface",
+        "0": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 21.880015289387728,
+        "wcag_aa_coverage": 0.6666666666666666,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 10.586859443536111,
+        "harmony_alignment": 0.5057461861934144,
+        "runtime_seconds": 0.21235670800069784
+      }
+    },
+    "kmeans_rgb": {
+      "palette_rgb": [
+        [
+          21,
+          17,
+          24
+        ],
+        [
+          196,
+          209,
+          207
+        ],
+        [
+          111,
+          128,
+          125
+        ]
+      ],
+      "palette_hex": [
+        "#151118",
+        "#c4d1cf",
+        "#6f807d"
+      ],
+      "frequencies": [
+        0.4736888111888112,
+        0.2885343822843823,
+        0.23777680652680652
+      ],
+      "roles": {
+        "1": "surface",
+        "0": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 24.54231409849165,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 10.23250904889385,
+        "harmony_alignment": 0.5982407160514284,
+        "runtime_seconds": 0.07688791700002184
+      }
+    },
+    "kmeans_lab": {
+      "palette_rgb": [
+        [
+          19,
+          18,
+          24
+        ],
+        [
+          181,
+          200,
+          198
+        ],
+        [
+          111,
+          102,
+          95
+        ]
+      ],
+      "palette_hex": [
+        "#131218",
+        "#b5c8c6",
+        "#6f665f"
+      ],
+      "frequencies": [
+        0.45319420163170165,
+        0.33738709207459205,
+        0.2094187062937063
+      ],
+      "roles": {
+        "1": "surface",
+        "0": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 28.885642399982398,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 10.394601353988067,
+        "harmony_alignment": 0.46039196887749245,
+        "runtime_seconds": 0.09985558399966976
+      }
+    }
+  },
+  "image_mean_L": 40.11208169747367,
+  "subset": "photographs",
+  "filename": "000000228214.jpg"
+}

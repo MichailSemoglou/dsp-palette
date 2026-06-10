@@ -14,13 +14,13 @@ METRIC_COLS = [
 ]
 
 # Load manifest → get test IDs
-with open("research/corpus/manifest.json") as f:
+with open("corpus/manifest.json") as f:
     manifest = json.load(f)
 test_ids = {x["id"] for x in manifest if x.get("source") == "COCO val2017" and not x.get("dev", False)}
 print(f"Test-set size: {len(test_ids)}")
 
 # Load raw results filtered to test set
-results_dir = Path("research/results/raw")
+results_dir = Path("results/raw")
 rows = []
 for path in sorted(results_dir.glob("*.json")):
     with open(path) as f:
@@ -40,7 +40,7 @@ print(f"Rows loaded: {len(df)}, unique images: {df['image_id'].nunique()}, metho
 
 # Aggregate
 agg = df.groupby("method")[METRIC_COLS].agg(["mean", "median", "std"]).round(4)
-agg.to_csv("research/results/aggregated/aggregate_metrics.csv")
+agg.to_csv("results/aggregated/aggregate_metrics.csv")
 print("Saved aggregate_metrics.csv")
 
 # Wilcoxon + Cliff's delta
@@ -76,9 +76,9 @@ for method in sorted(df["method"].unique()):
         )
 
 stats_df = pd.DataFrame(results)
-stats_df.to_csv("research/results/aggregated/wilcoxon_tests.csv", index=False)
+stats_df.to_csv("results/aggregated/wilcoxon_tests.csv", index=False)
 print("Saved wilcoxon_tests.csv")
-df.to_csv("research/results/aggregated/tidy_results.csv", index=False)
+df.to_csv("results/aggregated/tidy_results.csv", index=False)
 print("Saved tidy_results.csv")
 
 # Print key numbers for the paper

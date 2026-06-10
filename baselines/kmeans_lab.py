@@ -6,7 +6,7 @@ from numpy.typing import NDArray
 from PIL import Image
 from sklearn.cluster import KMeans  # type: ignore[import]
 
-from research.dsp.metrics import srgb_to_lab
+from dsp.metrics import srgb_to_lab
 
 
 def extract_palette(

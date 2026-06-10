@@ -1,0 +1,31 @@
+{
+  "n_test_images": 75,
+  "wcag_aa_threshold": 4.5,
+  "surface_on_surface_aa_pass_rates": {
+    "dsp": {
+      "aa_pass": 75,
+      "n_images": 75,
+      "aa_pass_rate": 1.0
+    },
+    "kmeans_lab": {
+      "aa_pass": 75,
+      "n_images": 75,
+      "aa_pass_rate": 1.0
+    },
+    "kmeans_rgb": {
+      "aa_pass": 75,
+      "n_images": 75,
+      "aa_pass_rate": 1.0
+    },
+    "median_cut": {
+      "aa_pass": 65,
+      "n_images": 75,
+      "aa_pass_rate": 0.8667
+    }
+  },
+  "dsp_wcag_replacement_fires": {
+    "replacement_applied": 1,
+    "distinctness_compromised": 0,
+    "n": 75
+  }
+}

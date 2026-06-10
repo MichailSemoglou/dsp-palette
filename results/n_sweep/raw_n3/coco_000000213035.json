@@ -1,0 +1,184 @@
+{
+  "image_id": "coco_000000213035",
+  "n": 3,
+  "methods": {
+    "dsp": {
+      "palette_rgb": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          249,
+          228,
+          218
+        ],
+        [
+          137,
+          97,
+          84
+        ]
+      ],
+      "palette_hex": [
+        "#010101",
+        "#f9e4da",
+        "#896154"
+      ],
+      "frequencies": [
+        0.72057962529274,
+        0.13535567915690866,
+        0.14406469555035128
+      ],
+      "roles": {
+        "0": "surface",
+        "1": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 35.677953861027326,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 7.055308962128228,
+        "harmony_alignment": 0.582874990558197,
+        "runtime_seconds": 0.31708679199982726
+      },
+      "wcag_guaranteed": true,
+      "wcag_replacement_applied": false,
+      "wcag_distinctness_compromised": false,
+      "candidate_pool_size": 256,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "tau_dist": 10.0
+    },
+    "median_cut": {
+      "palette_rgb": [
+        [
+          11,
+          9,
+          13
+        ],
+        [
+          33,
+          31,
+          34
+        ],
+        [
+          186,
+          153,
+          141
+        ]
+      ],
+      "palette_hex": [
+        "#0b090d",
+        "#211f22",
+        "#ba998d"
+      ],
+      "frequencies": [
+        0.4574648711943794,
+        0.31962822014051523,
+        0.22290690866510537
+      ],
+      "roles": {
+        "0": "surface",
+        "2": "on-surface",
+        "1": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 5.810356691232111,
+        "wcag_aa_coverage": 0.6666666666666666,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 5.8879076394827905,
+        "harmony_alignment": 0.03023665206094171,
+        "runtime_seconds": 0.22383166599956894
+      }
+    },
+    "kmeans_rgb": {
+      "palette_rgb": [
+        [
+          16,
+          15,
+          18
+        ],
+        [
+          215,
+          177,
+          163
+        ],
+        [
+          111,
+          89,
+          84
+        ]
+      ],
+      "palette_hex": [
+        "#100f12",
+        "#d7b1a3",
+        "#6f5954"
+      ],
+      "frequencies": [
+        0.7215493266978923,
+        0.17787251170960186,
+        0.10057816159250585
+      ],
+      "roles": {
+        "0": "surface",
+        "1": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 27.051993297672794,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 5.180535635097076,
+        "harmony_alignment": 0.04674841355867923,
+        "runtime_seconds": 0.08328204099962022
+      }
+    },
+    "kmeans_lab": {
+      "palette_rgb": [
+        [
+          18,
+          16,
+          21
+        ],
+        [
+          214,
+          175,
+          160
+        ],
+        [
+          104,
+          83,
+          78
+        ]
+      ],
+      "palette_hex": [
+        "#121015",
+        "#d6afa0",
+        "#68534e"
+      ],
+      "frequencies": [
+        0.7191488583138174,
+        0.18226361241217798,
+        0.09858752927400469
+      ],
+      "roles": {
+        "0": "surface",
+        "1": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 24.648077905647888,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 5.258363864405291,
+        "harmony_alignment": 0.04826232697603237,
+        "runtime_seconds": 0.0870318329998554
+      }
+    }
+  },
+  "image_mean_L": 21.226660851060213,
+  "subset": "photographs",
+  "filename": "000000213035.jpg"
+}

@@ -3,13 +3,13 @@
 
 Outputs
 -------
-research/figures/fig1_method.tex          TikZ pipeline schematic
-research/figures/fig2_examples.pdf        4-image × methods palette grid
-research/figures/fig3_violins.pdf         violin plots of metric distributions
-research/figures/fig4_sensitivity.pdf     sensitivity analysis (τ and α/β)
-research/figures/table1_aggregate.tex     LaTeX aggregate metrics table
-research/figures/table2_cliffs_delta.tex  LaTeX Cliff's delta table
-research/results/aggregated/summary_for_paper.md  all numbers for the paper
+figures/fig1_method.tex          TikZ pipeline schematic
+figures/fig2_examples.pdf        4-image × methods palette grid
+figures/fig3_violins.pdf         violin plots of metric distributions
+figures/fig4_sensitivity.pdf     sensitivity analysis (τ and α/β)
+figures/table1_aggregate.tex     LaTeX aggregate metrics table
+figures/table2_cliffs_delta.tex  LaTeX Cliff's delta table
+results/aggregated/summary_for_paper.md  all numbers for the paper
 """
 
 import argparse
@@ -32,7 +32,7 @@ import matplotlib.ticker as mticker
 import numpy as np
 import pandas as pd
 from PIL import Image
-from research.dsp.metrics import relative_luminance
+from dsp.metrics import relative_luminance
 
 logger = logging.getLogger(__name__)
 
@@ -251,12 +251,13 @@ def figure2_examples(
     n_rows = len(FIG2_IMAGES)
     # columns: thumbnail + one per method
     n_cols = 1 + len(methods)
+    row_height = 1.20  # inches per palette row (reduced to shorten the figure)
     fig, axes = plt.subplots(
         n_rows, n_cols,
-        figsize=(2.4 * n_cols, 2.0 * n_rows),
+        figsize=(2.4 * n_cols, row_height * n_rows),
         squeeze=False,
     )
-    fig.subplots_adjust(wspace=0.05, hspace=0.25)
+    fig.subplots_adjust(wspace=0.05, hspace=0.30)
 
     for row, (image_id, crit_label) in enumerate(FIG2_IMAGES):
         result_path = results_dir / f"{image_id}.json"
@@ -274,15 +275,24 @@ def figure2_examples(
         if img_path.exists():
             thumb = Image.open(img_path).convert("RGB")
             w, h = thumb.size
-            s = min(w, h)
-            thumb = thumb.crop(((w - s) // 2, (h - s) // 2,
-                                (w + s) // 2, (h + s) // 2))
-            thumb = thumb.resize((120, 120), Image.LANCZOS)
-            ax_thumb.imshow(np.array(thumb))
+            # Center-crop to a landscape rectangle so the photo reads at the
+            # same width as the palette strips (no square thumbnails).
+            target_ar = 1.85
+            if w / h > target_ar:
+                new_w = int(round(h * target_ar))
+                left = (w - new_w) // 2
+                thumb = thumb.crop((left, 0, left + new_w, h))
+            else:
+                new_h = int(round(w / target_ar))
+                top = (h - new_h) // 2
+                thumb = thumb.crop((0, top, w, top + new_h))
+            thumb = thumb.resize((296, 160), Image.LANCZOS)
+            # aspect="auto" lets the rectangle fill the full column width.
+            ax_thumb.imshow(np.array(thumb), aspect="auto")
         ax_thumb.axis("off")
         mean_L = data.get("image_mean_L", 0.0)
         ax_thumb.set_title(
-            f"{crit_label}\nmean L*={mean_L:.0f}",
+            f"{crit_label}\n" + rf"mean $L^*$={mean_L:.0f}",
             fontsize=6.5, pad=2,
         )
 
@@ -342,9 +352,9 @@ def figure2_examples(
             # min ΔE annotation under EVERY method strip
             min_de = mdata.get("metrics", {}).get("min_pairwise_de2000", float("nan"))
             ax.text(
-                0.5, -0.08, f"\u0394E_min={min_de:.1f}",
+                0.5, -0.10, rf"$\Delta E_{{\min}}={min_de:.1f}$",
                 transform=ax.transAxes,
-                ha="center", fontsize=5.5, color="#333333",
+                ha="center", fontsize=6, color="#444444",
             )
 
     fig.savefig(output_path, dpi=180, bbox_inches="tight", facecolor="white")
@@ -458,8 +468,8 @@ def _run_sensitivity_sweep(
     corpus_root: Path,
 ) -> tuple[dict, dict]:
     """Run DSP with varied τ_dist and β/α on a subset.  Returns two dicts."""
-    from research.dsp.selector import select_palette
-    from research.dsp.metrics import min_pairwise_delta_e, reconstruction_error_de2000
+    from dsp.selector import select_palette
+    from dsp.metrics import min_pairwise_delta_e, reconstruction_error_de2000
 
     # Load images as numpy arrays (RGB 0-255 uint8)
     images: dict[str, np.ndarray] = {}
@@ -638,7 +648,7 @@ def table1_aggregate_latex(
     lines.append(r"\begin{table}[htbp]")
     lines.append(r"\centering")
     lines.append(
-        r"\caption{Mean $\pm$ std over $N=90$ COCO val2017 photographs. "
+        r"\caption{Mean $\pm$ std over $N=75$ COCO val2017 test photographs. "
         r"Significance markers (Wilcoxon signed-rank, two-tailed) compare each "
         r"baseline against DSP: $^{***}p<0.001$, $^{**}p<0.01$, $^*p<0.05$, "
         r"$^{\mathrm{ns}}$not significant.}"
@@ -789,7 +799,7 @@ def write_summary(
         lines.extend(["", f"### {s}", ""])
 
     lines.append("# Summary for Paper — DSP Palette Extraction")
-    lines.append("\n_Generated automatically from N=90 COCO val2017 corpus._\n")
+    lines.append("\n_Generated automatically from N=75 COCO val2017 test images (dev=False)._\n")
 
     # ── Statistical conventions ────────────────────────────────────
     h2("0. Statistical Conventions")
@@ -822,7 +832,7 @@ def write_summary(
         "- **β/α invariance:** Selection is empirically invariant to "
         "β/α ∈ [0.1, 10] (spread < 1 ΔE₂₀₀₀ on N=30 images). "
         "All results use α=β=1.0. "
-        "See `research/dsp/selector.py` docstring for structural explanation."
+        "See `dsp/selector.py` docstring for structural explanation."
     )
 
     # ── Corpus composition ─────────────────────────────────────────
@@ -1061,10 +1071,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Generate all Day 6 figures and tables for the APSIPA paper."
     )
-    parser.add_argument("--results-dir",     default="research/results/raw/")
-    parser.add_argument("--aggregated-dir",  default="research/results/aggregated/")
-    parser.add_argument("--figures-dir",     default="research/figures/")
-    parser.add_argument("--corpus-root",     default="research/corpus/")
+    parser.add_argument("--results-dir",     default="results/raw/")
+    parser.add_argument("--aggregated-dir",  default="results/aggregated/")
+    parser.add_argument("--figures-dir",     default="figures/")
+    parser.add_argument("--corpus-root",     default="corpus/")
     parser.add_argument("--skip-sensitivity", action="store_true",
                         help="Skip Figure 4 (sensitivity sweep; ~2 min)")
     args = parser.parse_args()

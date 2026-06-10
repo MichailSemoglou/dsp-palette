@@ -53,7 +53,7 @@
       },
       "metrics": {
         "min_pairwise_de2000": 27.525209832165295,
-        "wcag_aa_coverage": 0.1,
+        "wcag_aa_coverage": 0.4,
         "wcag_aaa_coverage": 0.0,
         "reconstruction_error_de2000": 12.63696678929369,
         "harmony_alignment": 0.40147654999671795,

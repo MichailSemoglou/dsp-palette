@@ -1,0 +1,184 @@
+{
+  "image_id": "coco_000000033854",
+  "n": 3,
+  "methods": {
+    "dsp": {
+      "palette_rgb": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          3,
+          2,
+          6
+        ],
+        [
+          153,
+          99,
+          101
+        ]
+      ],
+      "palette_hex": [
+        "#ffffff",
+        "#030206",
+        "#996365"
+      ],
+      "frequencies": [
+        0.41941964285714284,
+        0.3595799180327869,
+        0.22100043911007025
+      ],
+      "roles": {
+        "0": "surface",
+        "1": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 38.827158265334695,
+        "wcag_aa_coverage": 0.6666666666666666,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 9.924137969340618,
+        "harmony_alignment": 0.020116571702563903,
+        "runtime_seconds": 0.32246187500004453
+      },
+      "wcag_guaranteed": true,
+      "wcag_replacement_applied": false,
+      "wcag_distinctness_compromised": false,
+      "candidate_pool_size": 256,
+      "alpha": 1.0,
+      "beta": 1.0,
+      "tau_dist": 10.0
+    },
+    "median_cut": {
+      "palette_rgb": [
+        [
+          49,
+          48,
+          51
+        ],
+        [
+          253,
+          254,
+          254
+        ],
+        [
+          198,
+          199,
+          198
+        ]
+      ],
+      "palette_hex": [
+        "#313033",
+        "#fdfefe",
+        "#c6c7c6"
+      ],
+      "frequencies": [
+        0.4919935597189696,
+        0.3215346896955503,
+        0.1864717505854801
+      ],
+      "roles": {
+        "1": "surface",
+        "0": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 12.208455659292117,
+        "wcag_aa_coverage": 0.6666666666666666,
+        "wcag_aaa_coverage": 0.6666666666666666,
+        "reconstruction_error_de2000": 8.151055534104149,
+        "harmony_alignment": 0.49193790719281855,
+        "runtime_seconds": 0.22020337499998277
+      }
+    },
+    "kmeans_rgb": {
+      "palette_rgb": [
+        [
+          39,
+          38,
+          41
+        ],
+        [
+          240,
+          241,
+          242
+        ],
+        [
+          137,
+          136,
+          134
+        ]
+      ],
+      "palette_hex": [
+        "#272629",
+        "#f0f1f2",
+        "#898886"
+      ],
+      "frequencies": [
+        0.4283518735362998,
+        0.41243413348946134,
+        0.15921399297423888
+      ],
+      "roles": {
+        "1": "surface",
+        "0": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 27.796969451131815,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 7.814824938463757,
+        "harmony_alignment": 0.2964097390084426,
+        "runtime_seconds": 0.06604820899974584
+      }
+    },
+    "kmeans_lab": {
+      "palette_rgb": [
+        [
+          238,
+          238,
+          238
+        ],
+        [
+          34,
+          35,
+          39
+        ],
+        [
+          124,
+          116,
+          113
+        ]
+      ],
+      "palette_hex": [
+        "#eeeeee",
+        "#222327",
+        "#7c7471"
+      ],
+      "frequencies": [
+        0.4297277517564403,
+        0.403307962529274,
+        0.1669642857142857
+      ],
+      "roles": {
+        "0": "surface",
+        "1": "on-surface",
+        "2": "primary"
+      },
+      "metrics": {
+        "min_pairwise_de2000": 28.73875197594773,
+        "wcag_aa_coverage": 0.3333333333333333,
+        "wcag_aaa_coverage": 0.3333333333333333,
+        "reconstruction_error_de2000": 7.873007212198114,
+        "harmony_alignment": 0.27017576969371954,
+        "runtime_seconds": 0.0774949579999884
+      }
+    }
+  },
+  "image_mean_L": 55.01319423770387,
+  "subset": "photographs",
+  "filename": "000000033854.jpg"
+}

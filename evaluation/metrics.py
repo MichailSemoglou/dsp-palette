@@ -116,8 +116,8 @@ def wilcoxon_vs_dsp(df: pd.DataFrame) -> pd.DataFrame:
 def main() -> None:
     logging.basicConfig(level=logging.INFO)
     parser = argparse.ArgumentParser()
-    parser.add_argument("--results-dir", default="research/results/raw/")
-    parser.add_argument("--output-dir", default="research/results/aggregated/")
+    parser.add_argument("--results-dir", default="results/raw/")
+    parser.add_argument("--output-dir", default="results/aggregated/")
     args = parser.parse_args()
 
     output_dir = Path(args.output_dir)

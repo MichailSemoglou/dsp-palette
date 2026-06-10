@@ -13,14 +13,14 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import colour
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-from research.dsp.selector import select_palette
-from research.dsp.roles import assign_roles
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from dsp.selector import select_palette
+from dsp.roles import assign_roles
 
-RESULTS_DIR       = Path("research/results/raw")
-CORPUS_VAL        = Path("research/corpus/photographs")
-CORPUS_TRAIN      = Path("research/corpus/photographs_train")
-FIGURES_DIR       = Path("research/figures")
+RESULTS_DIR       = Path("results/raw")
+CORPUS_VAL        = Path("corpus/photographs")
+CORPUS_TRAIN      = Path("corpus/photographs_train")
+FIGURES_DIR       = Path("figures")
 
 
 def _image_path(rec: dict) -> Path:

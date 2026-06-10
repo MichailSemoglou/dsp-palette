@@ -22,7 +22,8 @@ Algorithm
 
 Public API
 ----------
-select_palette(image, n, alpha, beta, tau_dist, max_candidates) -> SelectionResult
+select_from_candidates(candidates_rgb, freqs, n, alpha, beta, tau_dist, wcag_step) -> SelectionResult
+select_palette(image, n, alpha, beta, tau_dist, max_candidates, wcag_step) -> SelectionResult
 """
 
 import math
@@ -148,49 +149,35 @@ def _min_de_to_palette(
 # ---------------------------------------------------------------------------
 
 
-def select_palette(
-    image: Image.Image,
+def select_from_candidates(
+    candidates_rgb: NDArray[np.uint8],
+    freqs: NDArray[np.float64],
     n: int = 5,
     alpha: float = 1.0,
     beta: float = 1.0,
     tau_dist: float = 10.0,
-    max_candidates: int = 256,
+    wcag_step: bool = True,
 ) -> SelectionResult:
-    """Run the constrained greedy DSP selection on *image*.
+    """Run the constrained greedy DSP selection on a pre-built candidate pool.
+
+    Used by :func:`select_palette` and by constraint-matched baselines that
+    supply their own quantisation pool (e.g.
+    ``research.baselines.kmeans_lab_constrained``).
 
     Parameters
     ----------
-    image:
-        A ``PIL.Image.Image`` object (any mode; converted to RGB internally).
-    n:
-        Target palette size.
-    alpha:
-        Weight for log-frequency in the selection score.
-    beta:
-        Weight for min-ΔE2000 in the selection score.
-
-        **Invariance note:** the selection is largely invariant to β/α ∈ [0.1, 10]
-        because the τ_dist hard constraint already clamps minimum distinctness
-        regardless of the weighting. The score function primarily orders candidates
-        among those that already satisfy the constraint; shifting β/α redistributes
-        emphasis between frequency and distance within that feasible set, but has
-        negligible effect on which colours are ultimately selected
-        (empirically: spread < 1 ΔE₂₀₀₀ across the full β/α range on N=30 images).
-        The default α=β=1.0 is therefore representative of the family.
-    tau_dist:
-        Minimum ΔE2000 a candidate must have from all current palette members
-        to be eligible for selection (default 10 — "clearly distinct").
-    max_candidates:
-        Number of colours in the median-cut quantization pool.
-
-    Notes
-    -----
-    **mode=auto threshold (L* < 40):** When ``assign_roles`` is subsequently
-    called with ``mode='auto'``, it assigns dark-mode to images whose pixel-wise
-    mean L* is below 40.  This threshold was selected qualitatively from a small
-    development set; images with mean L* < 40 are visually dark enough that a
-    dark-themed design system is the natural choice.  Learning this threshold
-    from labelled design-system corpora is future work.
+    candidates_rgb : NDArray shape (K, 3) uint8
+        Candidate colours in sRGB 0–255.
+    freqs : NDArray shape (K,) float64
+        Normalised pixel frequencies for each candidate (values sum ≈ 1.0).
+    n, alpha, beta, tau_dist :
+        Same semantics as :func:`select_palette`.
+    wcag_step : bool
+        If *True* (default), run the WCAG AA post-selection replacement check
+        (Step 5 of the DSP pipeline).  Set to *False* to skip it entirely;
+        ``wcag_guaranteed`` in the result then reflects whether the greedy
+        palette happens to contain a qualifying contrast pair, with no
+        correction applied.
 
     Returns
     -------
@@ -200,10 +187,9 @@ def select_palette(
         raise ValueError(f"n must be ≥ 1, got {n}")
 
     # ------------------------------------------------------------------
-    # Step 1–2: quantize + convert to Lab
+    # Step 2: convert candidates to Lab
     # ------------------------------------------------------------------
-    candidates_rgb, freqs = _quantize_to_candidates(image, max_candidates)
-    candidates_lab = srgb_to_lab(candidates_rgb.astype(np.float64))  # (K, 3)
+    candidates_lab = srgb_to_lab(candidates_rgb)  # (K, 3)
     K = len(candidates_rgb)
 
     # ------------------------------------------------------------------
@@ -281,7 +267,7 @@ def select_palette(
         in_palette.add(best_idx)
 
     # ------------------------------------------------------------------
-    # Step 5: WCAG AA post-selection check
+    # Step 5: WCAG AA post-selection check (skipped when wcag_step=False)
     # ------------------------------------------------------------------
     wcag_replacement_applied = False
     wcag_distinctness_compromised = False
@@ -294,7 +280,7 @@ def select_palette(
 
     wcag_guaranteed = _palette_has_aa_pair(palette_indices)
 
-    if not wcag_guaranteed:
+    if wcag_step and not wcag_guaranteed:
         # Find the palette member with the lowest minimum ΔE to its neighbours
         # (the "least distinct" member) and try to replace it.
         palette_lab_list = [candidates_lab[i] for i in palette_indices]
@@ -397,4 +383,64 @@ def select_palette(
         wcag_replacement_applied=wcag_replacement_applied,
         wcag_distinctness_compromised=wcag_distinctness_compromised,
         candidate_pool_size=K,
+    )
+
+
+def select_palette(
+    image: Image.Image,
+    n: int = 5,
+    alpha: float = 1.0,
+    beta: float = 1.0,
+    tau_dist: float = 10.0,
+    max_candidates: int = 256,
+    wcag_step: bool = True,
+) -> SelectionResult:
+    """Run the constrained greedy DSP selection on *image*.
+
+    Parameters
+    ----------
+    image:
+        A ``PIL.Image.Image`` object (any mode; converted to RGB internally).
+    n:
+        Target palette size.
+    alpha:
+        Weight for log-frequency in the selection score.
+    beta:
+        Weight for min-ΔE2000 in the selection score.
+
+        **Invariance note:** the selection is largely invariant to β/α ∈ [0.1, 10]
+        because the τ_dist hard constraint already clamps minimum distinctness
+        regardless of the weighting. The score function primarily orders candidates
+        among those that already satisfy the constraint; shifting β/α redistributes
+        emphasis between frequency and distance within that feasible set, but has
+        negligible effect on which colours are ultimately selected
+        (empirically: spread < 1 ΔE₂₀₀₀ across the full β/α range on N=30 images).
+        The default α=β=1.0 is therefore representative of the family.
+    tau_dist:
+        Minimum ΔE2000 a candidate must have from all current palette members
+        to be eligible for selection (default 10 — "clearly distinct").
+    max_candidates:
+        Number of colours in the median-cut quantization pool.
+    wcag_step : bool
+        If *True* (default), run the WCAG AA post-selection replacement check
+        (Step 5 of the DSP pipeline).  Set to *False* to skip it entirely
+        (useful for ablation studies).
+
+    Notes
+    -----
+    **mode=auto threshold (L* < 40):** When ``assign_roles`` is subsequently
+    called with ``mode='auto'``, it assigns dark-mode to images whose pixel-wise
+    mean L* is below 40.  This threshold was selected qualitatively from a small
+    development set; images with mean L* < 40 are visually dark enough that a
+    dark-themed design system is the natural choice.  Learning this threshold
+    from labelled design-system corpora is future work.
+
+    Returns
+    -------
+    SelectionResult
+    """
+    candidates_rgb, freqs = _quantize_to_candidates(image, max_candidates)
+    return select_from_candidates(
+        candidates_rgb, freqs, n=n, alpha=alpha, beta=beta,
+        tau_dist=tau_dist, wcag_step=wcag_step,
     )

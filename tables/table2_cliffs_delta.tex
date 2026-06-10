@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering
+\caption{Cliff's $\delta$ (DSP minus baseline), positive = DSP higher. Effect magnitude: $|\delta|<0.147$ negligible, $<0.33$ small, $<0.474$ medium, else large. Markers as in Table~\ref{tab:aggregate_metrics}.}
+\label{tab:cliffs_delta}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lcccc}
+\hline\hline
+Baseline & Min $\Delta E_{2000}$ & WCAG AA & Recon.\ $\Delta E$ & Harmony \\
+\hline
+k-Means Lab & +0.846$^{\mathrm{***}}$ {\scriptsize(lg.)} & +0.380$^{\mathrm{***}}$ {\scriptsize(med.)} & +0.605$^{\mathrm{***}}$ {\scriptsize(lg.)} & +0.152$^{\mathrm{*}}$ {\scriptsize(sm.)} \\
+k-Means RGB & +0.933$^{\mathrm{***}}$ {\scriptsize(lg.)} & +0.159$^{\mathrm{*}}$ {\scriptsize(sm.)} & +0.552$^{\mathrm{***}}$ {\scriptsize(lg.)} & +0.054 {\scriptsize(neg.)} \\
+Median Cut & +0.989$^{\mathrm{***}}$ {\scriptsize(lg.)} & +0.263$^{\mathrm{**}}$ {\scriptsize(sm.)} & +0.426$^{\mathrm{***}}$ {\scriptsize(med.)} & +0.090 {\scriptsize(neg.)} \\
+\hline\hline
+\end{tabular}
+\end{table}

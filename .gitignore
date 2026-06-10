@@ -20,7 +20,9 @@ env/
 .LSOverride
 
 # Corpus images (large files; not part of DOI snapshot — use corpus/download.py)
+corpus/photographs
 corpus/photographs/
+corpus/photographs_train
 corpus/photographs_train/
 
 # Jupyter
@@ -39,6 +41,9 @@ figures/fig*.pdf
 figures/fig1_method.tex
 figures/fig1_method_body.tex
 figures/fig2_caption.md
+
+# Submission draft (pre-camera-ready; not for distribution)
+Semoglou_DSP_APSIPA2026.pdf
 
 # LaTeX build artifacts
 *.aux

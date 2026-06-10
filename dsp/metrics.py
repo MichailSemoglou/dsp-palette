@@ -66,21 +66,31 @@ except ImportError:  # pragma: no cover
 _D65_XYZ = np.array([95.0489, 100.0, 108.8840])
 
 
-def srgb_to_lab(rgb: NDArray[np.float64]) -> NDArray[np.float64]:
-    """Convert an array of sRGB colours (0–255 uint8 or 0–1 float) to CIELAB.
+def srgb_to_lab(rgb: NDArray) -> NDArray[np.float64]:
+    """Convert an array of sRGB colours (0–255 uint8/int or 0–1 float) to CIELAB.
 
     Parameters
     ----------
     rgb:
-        Shape (..., 3), values either in [0, 255] (uint8) or [0, 1] (float).
+        Shape (..., 3), values either in [0, 255] (integer dtype) or [0, 1]
+        (float dtype already normalised).  Pass the array in its original dtype
+        (uint8, int32, etc.) whenever possible so that range detection is
+        unambiguous.  Callers that pre-convert to float64 must ensure
+        ``arr.max() > 1.0``; if all values happen to be in {0, 1} and the
+        dtype is float, the array is treated as already-normalised.
 
     Returns
     -------
     NDArray of shape (..., 3) with L*, a*, b* values.
     """
-    rgb = np.asarray(rgb, dtype=np.float64)
-    if rgb.max() > 1.0:
-        rgb = rgb / 255.0
+    # Check dtype BEFORE forcing float64 so that integer inputs such as
+    # uint8 [1, 0, 0] (= very dark red, not pure-red) are not misread as
+    # the normalised [0, 1] float range.
+    _orig = np.asarray(rgb)
+    if np.issubdtype(_orig.dtype, np.integer) or _orig.max() > 1.0:
+        rgb = _orig.astype(np.float64) / 255.0
+    else:
+        rgb = _orig.astype(np.float64)
 
     if _COLOUR_AVAILABLE:
         return colour.XYZ_to_Lab(
@@ -263,11 +273,19 @@ WCAG_AA_NORMAL = 4.5
 WCAG_AAA_NORMAL = 7.0
 
 
-def relative_luminance(rgb: Sequence[float]) -> float:
-    """WCAG 2.1 relative luminance for sRGB (values 0–255 or 0–1)."""
-    arr = np.asarray(rgb, dtype=np.float64)
-    if arr.max() > 1.0:
-        arr = arr / 255.0
+def relative_luminance(rgb: Sequence) -> float:
+    """WCAG 2.1 relative luminance for sRGB (values 0–255 or 0–1).
+
+    Pass colours in their original integer dtype (uint8, int) whenever
+    possible.  Range detection uses dtype first; falls back to value
+    magnitude so that integer inputs with max == 1 (e.g. [1, 0, 0] in
+    uint8 = very dark red) are not misread as normalised [0, 1] floats.
+    """
+    orig = np.asarray(rgb)
+    if np.issubdtype(orig.dtype, np.integer) or orig.max() > 1.0:
+        arr = orig.astype(np.float64) / 255.0
+    else:
+        arr = orig.astype(np.float64)
     lin = np.where(arr <= 0.04045, arr / 12.92, ((arr + 0.055) / 1.055) ** 2.4)
     return float(0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2])
 
@@ -483,6 +501,28 @@ def reconstruction_error_fast(
 _recon_logger = logging.getLogger(__name__)
 
 
+def assert_de2000_available() -> None:
+    """Raise ``RuntimeError`` if colour-science is not installed.
+
+    Call this at the start of any script that reports
+    ``reconstruction_error_de2000`` results, to guarantee that the genuine
+    CIEDE2000 path is active rather than the ΔE76 fallback.
+
+    Raises
+    ------
+    RuntimeError
+        If ``colour`` cannot be imported in the current Python environment.
+    """
+    if not _COLOUR_AVAILABLE:
+        raise RuntimeError(
+            "colour-science is not installed in this environment.  "
+            "reconstruction_error_de2000() would silently return ΔE76 values, "
+            "which are not comparable to reported CIEDE2000 results.  "
+            "Install colour-science (pip install colour-science) before "
+            "running evaluation scripts."
+        )
+
+
 def reconstruction_error_de2000(
     image_rgb: NDArray[np.float64],
     palette_rgb: NDArray[np.float64],
@@ -495,8 +535,10 @@ def reconstruction_error_de2000(
     Pixel count is capped at ``max_pixels`` via uniform random subsampling to
     keep runtimes acceptable on large images.
 
-    Falls back to ΔE76 (``reconstruction_error_fast``) with a warning if
-    colour-science is not installed.
+    Raises ``RuntimeError`` immediately if colour-science is not installed;
+    the function no longer silently falls back to ΔE76, because a fallback
+    value is not comparable to the reported CIEDE2000 metric and must never
+    appear in published results.
 
     Parameters
     ----------
@@ -513,12 +555,20 @@ def reconstruction_error_de2000(
     Returns
     -------
     float — mean ΔE2000 reconstruction error (lower = better fidelity).
+
+    Raises
+    ------
+    RuntimeError
+        If colour-science is not available in the current environment.
     """
     if not _COLOUR_AVAILABLE:
-        _recon_logger.warning(
-            "colour-science not available; falling back to ΔE76 for reconstruction error."
+        raise RuntimeError(
+            "colour-science is not installed.  reconstruction_error_de2000() "
+            "requires the colour package (pip install colour-science).  "
+            "A ΔE76 fallback is intentionally not provided: fallback values "
+            "are not comparable to the reported CIEDE2000 metric and must "
+            "never be recorded as results."
         )
-        return reconstruction_error_fast(image_rgb, palette_rgb)
 
     pixels = image_rgb.reshape(-1, 3).astype(np.float64)
     n_pixels = len(pixels)

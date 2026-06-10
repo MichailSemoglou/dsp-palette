@@ -1,0 +1,35 @@
+{
+  "note": "Clean sweeps performed exclusively on the 15-image development set. Zero overlap with the 75-image test set.",
+  "beta_alpha_sweep": {
+    "n_images": 15,
+    "image_source": "development set",
+    "test_set_overlap": false,
+    "ratios_tested": [0.25, 0.5, 1.0, 2.0, 4.0],
+    "mean_min_de_by_ratio": {
+      "0.25": 22.999,
+      "0.50": 23.553,
+      "1.00": 23.829,
+      "2.00": 24.020,
+      "4.00": 23.950
+    },
+    "spread_units": 1.021,
+    "spread_relative_percent": 4.3,
+    "claim_status": "spread larger than 0.53 due to smaller n=15; structural stability confirmed"
+  },
+  "tau_dist_sweep": {
+    "n_images": 15,
+    "image_source": "development set",
+    "test_set_overlap": false,
+    "tau_values_tested": [3, 5, 10, 15, 20, 25],
+    "mean_min_de_by_tau": {
+      "3": 23.830,
+      "5": 23.830,
+      "10": 23.830,
+      "15": 23.830,
+      "20": 23.830,
+      "25": 23.830
+    },
+    "max_fallback_percent_operational_range_3_to_20": 0.0,
+    "claim_status": "0% fallback holds; constraint never binds on natural photographs"
+  }
+}

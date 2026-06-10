@@ -412,14 +412,11 @@ def test_delta_e2000_numpy_fallback_sharma(monkeypatch, lab1, lab2, expected):
 # ---------------------------------------------------------------------------
 
 
-def test_reconstruction_error_de2000_falls_back_without_colour(monkeypatch, caplog):
-    """When colour-science is unavailable, de2000 logs a warning and falls back to de76."""
-    import logging
+def test_reconstruction_error_de2000_raises_without_colour(monkeypatch):
+    """When colour-science is unavailable, de2000 raises RuntimeError (no silent fallback)."""
+    import pytest
     monkeypatch.setattr(_metrics_mod, "_COLOUR_AVAILABLE", False)
     palette = np.array([[0, 0, 0], [255, 255, 255]], dtype=np.float64)
     image = np.array([[[128, 64, 32]]], dtype=np.float64)
-    with caplog.at_level(logging.WARNING, logger=_metrics_mod.__name__):
-        result = _metrics_mod.reconstruction_error_de2000(image, palette)
-    assert isinstance(result, float)
-    assert result > 0.0
-    assert "colour-science not available" in caplog.text
+    with pytest.raises(RuntimeError, match="colour-science is not installed"):
+        _metrics_mod.reconstruction_error_de2000(image, palette)
