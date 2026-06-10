@@ -54,7 +54,7 @@
       "metrics": {
         "min_pairwise_de2000": 20.044173722686356,
         "wcag_aa_coverage": 0.3,
-        "wcag_aaa_coverage": 0.2,
+        "wcag_aaa_coverage": 0.3,
         "reconstruction_error_de2000": 5.781444799725769,
         "harmony_alignment": 0.2511628348756737,
         "runtime_seconds": 0.3223749160024454

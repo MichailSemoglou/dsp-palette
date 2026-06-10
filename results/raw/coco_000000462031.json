@@ -119,7 +119,7 @@
       "metrics": {
         "min_pairwise_de2000": 0.31536824582308065,
         "wcag_aa_coverage": 0.4,
-        "wcag_aaa_coverage": 0.6,
+        "wcag_aaa_coverage": 0.4,
         "reconstruction_error_de2000": 4.014095321733022,
         "harmony_alignment": 0.018317743527827075,
         "runtime_seconds": 0.19587483399664052
