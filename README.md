@@ -1,6 +1,6 @@
 # DSP Palette
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20092216.svg)](https://doi.org/10.5281/zenodo.20092216)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20092215.svg)](https://doi.org/10.5281/zenodo.20092215)
 
 Code, evaluation data, and a public reference implementation for the method.
 
@@ -14,7 +14,8 @@ You can try the live implementation of DSP Palette at [Véridique](https://qide.
 
 - Accepted paper: APSIPA ASC 2026, Track IVM
 - Public research artifact: reproducible code, evaluation pipeline, and dataset split
-- Persistent DOI: 10.5281/zenodo.20092216
+- Concept DOI (all versions): 10.5281/zenodo.20092215
+- Latest release DOI (v1.1.0): 10.5281/zenodo.21915330
 
 ## Abstract
 
@@ -83,8 +84,8 @@ If you use this code or data, please cite:
   year      = {2026},
   publisher = {Zenodo},
   version   = {1.1.0},
-  doi       = {10.5281/zenodo.20092216},
-  url       = {https://doi.org/10.5281/zenodo.20092216}
+  doi       = {10.5281/zenodo.20092215},
+  url       = {https://doi.org/10.5281/zenodo.20092215}
 }
 ```
 
