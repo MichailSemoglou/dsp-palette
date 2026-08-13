@@ -2,9 +2,19 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20092216.svg)](https://doi.org/10.5281/zenodo.20092216)
 
-Code and evaluation data for the paper:
+Code, evaluation data, and a public reference implementation for the method.
 
-> Michail Semoglou, "Distinctness-First Palette Extraction for Accessible Design Systems," submitted to _APSIPA ASC 2026_, Track IVM.
+## Implementation
+
+You can try the live implementation of DSP Palette at [Véridique](https://qide.studio/tools/veridique/veridique.html).
+
+> Michail Semoglou, "Distinctness-First Palette Extraction for Accessible Design Systems," accepted to _APSIPA ASC 2026_, Track IVM.
+
+## Project status
+
+- Accepted paper: APSIPA ASC 2026, Track IVM
+- Public research artifact: reproducible code, evaluation pipeline, and dataset split
+- Persistent DOI: 10.5281/zenodo.20092216
 
 ## Abstract
 
@@ -20,10 +30,10 @@ pip install -r requirements.txt
 
 ## Repository Structure
 
-```
-dsp/                  # DSP method implementation (selector, roles, metrics)
-baselines/            # k-Means Lab, k-Means RGB, Median Cut, ColorThief
-evaluation/           # evaluation runner, metrics, aggregation scripts
+```text
+dsp/                  # DSP method implementation (selector, roles, and metrics)
+baselines/            # k-Means Lab, k-Means RGB, Median Cut, and ColorThief
+evaluation/           # evaluation runner, metrics, and aggregation scripts
 corpus/
   manifest.json       # image IDs with dev/test split labels
   download.py         # script to fetch COCO images
@@ -31,7 +41,7 @@ results/
   raw/                # per-image evaluation JSONs (N = 115)
   aggregated/         # CSV summaries and summary_for_paper.md
 tables/               # standalone LaTeX table sources (Tables 1–3)
-figures/              # pipeline diagnostic figure
+figures/              # pipeline diagnostic figures
 tests/                # unit tests
 ```
 
@@ -72,7 +82,7 @@ If you use this code or data, please cite:
   title     = {{DSP Palette: Distinctness-First Palette Extraction for Accessible Design Systems}},
   year      = {2026},
   publisher = {Zenodo},
-  version   = {1.0.0},
+  version   = {1.1.0},
   doi       = {10.5281/zenodo.20092216},
   url       = {https://doi.org/10.5281/zenodo.20092216}
 }

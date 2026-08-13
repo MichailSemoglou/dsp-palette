@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dsp-palette"
+version = "1.1.0"
+description = "Distinctness-First Palette Extraction for Accessible Design Systems"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Michail Semoglou" }]
+keywords = ["palette", "design", "color", "accessibility", "image-processing"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+
+dependencies = [
+  "colour-science>=0.4.4",
+  "scikit-learn>=1.3.0",
+  "numpy>=1.24.0",
+  "scipy>=1.11.0",
+  "matplotlib>=3.7.0",
+  "pandas>=2.0.0",
+  "Pillow>=10.3.0",
+  "requests>=2.31.0",
+  "tqdm>=4.65.0",
+  "colorthief>=0.2.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/MichailSemoglou/dsp-palette"
+Repository = "https://github.com/MichailSemoglou/dsp-palette"
+Issues = "https://github.com/MichailSemoglou/dsp-palette/issues"
+Documentation = "https://github.com/MichailSemoglou/dsp-palette"
+
+[tool.setuptools]
+packages = ["dsp"]
+
+[tool.setuptools.package-data]
+dsp = ["py.typed"]

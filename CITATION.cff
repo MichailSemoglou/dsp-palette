@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this code or data, please cite as below."
 type: software
 title: "DSP Palette: Distinctness-First Palette Extraction for Accessible Design Systems"
-abstract: "Code and evaluation data for Distinctness-First Palette Selection (DSP), a constrained greedy algorithm that selects perceptually distinct, WCAG-accessible color palettes from images. Companion repository to the paper presented at APSIPA ASC 2026."
+abstract: "Code and evaluation data for Distinctness-First Palette Selection (DSP), a constrained greedy algorithm that selects perceptually distinct, WCAG-accessible color palettes from images. Companion repository to the paper accepted to APSIPA ASC 2026, Track IVM."
 authors:
   - family-names: "Semoglou"
     given-names: "Michail"
@@ -10,8 +10,8 @@ authors:
     affiliation: "College of Design and Innovation, Tongji University"
 repository-code: "https://github.com/MichailSemoglou/dsp-palette"
 license: MIT
-version: "1.0.0"
-date-released: "2026-05-08"
+version: "1.1.0"
+date-released: "2026-08-13"
 doi: "10.5281/zenodo.20092216"
 keywords:
   - "color palette extraction"
