@@ -12,7 +12,7 @@ repository-code: "https://github.com/MichailSemoglou/dsp-palette"
 license: MIT
 version: "1.1.0"
 date-released: "2026-08-13"
-doi: "10.5281/zenodo.20092216"
+doi: "10.5281/zenodo.20092215"
 keywords:
   - "color palette extraction"
   - "CIELAB"
