@@ -23,11 +23,6 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Image Processing",
 ]
 
-[project.urls]
-Homepage = "https://github.com/MichailSemoglou/dsp-palette"
-Repository = "https://github.com/MichailSemoglou/dsp-palette"
-Issues = "https://github.com/MichailSemoglou/dsp-palette/issues"
-Documentation = "https://github.com/MichailSemoglou/dsp-palette"
 dependencies = [
   "colour-science>=0.4.4",
   "scikit-learn>=1.3.0",
@@ -40,6 +35,12 @@ dependencies = [
   "tqdm>=4.65.0",
   "colorthief>=0.2.1",
 ]
+
+[project.urls]
+Homepage = "https://github.com/MichailSemoglou/dsp-palette"
+Repository = "https://github.com/MichailSemoglou/dsp-palette"
+Issues = "https://github.com/MichailSemoglou/dsp-palette/issues"
+Documentation = "https://github.com/MichailSemoglou/dsp-palette"
 
 [tool.setuptools]
 packages = ["dsp"]

@@ -5,15 +5,34 @@ on:
     tags:
       - "v*"
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to publish (e.g. v1.1.0)"
+        required: true
 
 jobs:
   build:
     name: Build distribution
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+
+      - name: Validate version consistency
+        run: |
+          TOML_VER=$(grep '^version' pyproject.toml | head -1 | sed 's/version = "//;s/"//')
+          PKG_VER=$(python -c "import ast, sys; tree=ast.parse(open('dsp/__init__.py').read()); print([n.value.s for n in ast.walk(tree) if isinstance(n, ast.Assign) and any(t.id=='__version__' for t in n.targets if isinstance(t, ast.Name))][0])")
+          TAG=${{ github.event_name == 'workflow_dispatch' && 'inputs.tag' || 'github.ref_name' }}
+          echo "pyproject.toml: $TOML_VER | dsp.__version__: $PKG_VER"
+          if [ "$TOML_VER" != "$PKG_VER" ]; then
+            echo "Version mismatch between pyproject.toml and dsp/__init__.py"
+            exit 1
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v5
