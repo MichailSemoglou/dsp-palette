@@ -1,5 +1,5 @@
 """
-Task 6: Descriptive statistics — WCAG fire count and Surface/On-Surface
+Descriptive statistics — WCAG fire count and Surface/On-Surface
 AA pass rate per method across N=75 test images.
 
 (a) WCAG replacement fire count for the stored DSP results.
@@ -18,8 +18,8 @@ results/ablation/descriptive_aa_summary.json — aggregate pass rates
 
 Usage
 -----
-    python -m research.evaluation.descriptive_stats \\
-        --results-dir results/raw/ \\
+    python -m evaluation.descriptive_stats \
+        --results-dir results/raw/ \
         --manifest corpus/manifest.json
 """
 
@@ -151,7 +151,7 @@ def main(argv: list[str] | None = None) -> None:
     # Console report
     sep = "=" * 68
     print(f"\n{sep}")
-    print("DESCRIPTIVE STATISTICS — WCAG AA (Task 6)")
+    print("DESCRIPTIVE STATISTICS — WCAG AA")
     print(f"N = {len(df)} test images")
     print(sep)
 

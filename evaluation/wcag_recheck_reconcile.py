@@ -30,7 +30,7 @@ Output
 
 Usage
 -----
-    python3 -m research.evaluation.wcag_recheck_reconcile
+    python3 -m evaluation.wcag_recheck_reconcile
 """
 
 from __future__ import annotations
@@ -71,7 +71,7 @@ def _buggy_relative_luminance(rgb) -> float:
     (L ≈ 0.000065).
     """
     arr = np.asarray(rgb, dtype=np.float64)   # ← erases dtype
-    if arr.max() > 1.0:                        # ← misses max == 1.0 exactly
+    if arr.max() > 1.0:                       # ← misses max == 1.0 exactly
         arr = arr / 255.0
     lin = np.where(arr <= 0.04045, arr / 12.92, ((arr + 0.055) / 1.055) ** 2.4)
     return float(0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2])

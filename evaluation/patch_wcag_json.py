@@ -6,7 +6,7 @@ Writes patched JSONs in-place.
 
 Usage
 -----
-    python3 -m research.evaluation.patch_wcag_json
+    python3 -m evaluation.patch_wcag_json
 """
 from __future__ import annotations
 

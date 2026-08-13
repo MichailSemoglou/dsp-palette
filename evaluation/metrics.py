@@ -4,7 +4,7 @@ Aggregate raw per-image results and run statistical tests.
 
 Usage
 -----
-    python -m research.evaluation.metrics \
+    python -m evaluation.metrics \
         --results-dir results/raw/ \
         --output-dir results/aggregated/
 """
@@ -88,6 +88,14 @@ def wilcoxon_vs_dsp(df: pd.DataFrame) -> pd.DataFrame:
                 continue
             x = dsp_rows.loc[common_ids, metric].values.astype(float)
             y = baseline_rows.loc[common_ids, metric].values.astype(float)
+
+            if np.allclose(x, y):
+                logger.warning(
+                    "Skipping Wilcoxon test for %s vs DSP on %s because paired values are identical",
+                    method,
+                    metric,
+                )
+                continue
 
             try:
                 stat, p = stats.wilcoxon(x, y, alternative="two-sided")

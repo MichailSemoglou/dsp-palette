@@ -1,5 +1,5 @@
 """
-Task 3: Quantify how often the hard τ_dist constraint binds during greedy
+Quantify how often the hard τ_dist constraint binds during greedy
 selection (DSP method, τ_dist = 10.0, N = 75 test images).
 
 For each test image and each greedy-expansion step (slots 2–5), replays the
@@ -17,9 +17,9 @@ results/ablation/tau_binding_summary.json  Aggregate statistics.
 
 Usage
 -----
-    python -m research.evaluation.tau_binding_analysis \\
-        --manifest   corpus/manifest.json \\
-        --corpus-root corpus/ \\
+    python -m evaluation.tau_binding_analysis \
+        --manifest   corpus/manifest.json \
+        --corpus-root corpus/ \
         --ablation-dir results/ablation/raw/
 """
 
@@ -221,7 +221,7 @@ def main(argv: list[str] | None = None) -> None:
     # 5. Console report
     sep = "=" * 68
     print(f"\n{sep}")
-    print("TAU CONSTRAINT BINDING ANALYSIS (Task 3)")
+    print("TAU CONSTRAINT BINDING ANALYSIS")
     print(f"τ_dist = {TAU_DIST},  n = {N_PALETTE},  N = {total_images} test images")
     print(sep)
     print(f"A1 == A2 palettes          : CONFIRMED on all {total_images} images")

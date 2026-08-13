@@ -1,5 +1,5 @@
 """
-Task 7: β/α invariance panel.
+β/α invariance panel.
 
 Sweeps the β/α ratio (with α = 1.0 fixed, varying β) over [0.25, 4] on a
 30-image subsample of the 75 test images (seeded random.Random(2026)).
@@ -9,14 +9,14 @@ For each ratio value the script:
   • records mean minimum ΔE2000 and reconstruction error over the 30 images
 
 Prints the measured spread in mean min ΔE2000 and saves a two-panel figure
-to figures/beta_alpha_panel.pdf.  The figure is a NEW file; it does
+to figures/beta_alpha_panel.pdf.  The figure is a distinct output and does
 not overwrite fig4_sensitivity.pdf.
 
 Usage
 -----
-    python -m research.evaluation.beta_alpha_panel \\
-        --manifest   corpus/manifest.json \\
-        --corpus-root corpus/ \\
+    python -m evaluation.beta_alpha_panel \
+        --manifest   corpus/manifest.json \
+        --corpus-root corpus/ \
         --output-dir  figures/
 """
 
@@ -152,7 +152,7 @@ def main(argv: list[str] | None = None) -> None:
     # Print summary
     sep = "=" * 68
     print(f"\n{sep}")
-    print("β/α INVARIANCE SWEEP (Task 7)")
+    print("β/α INVARIANCE SWEEP")
     print(f"α = {ALPHA_FIXED} fixed;  β ∈ {BETA_VALUES}")
     print(f"N = {N_SUBSET} images (random.Random({SEED}) subsample of 75 test set)")
     print(sep)

@@ -3,21 +3,20 @@ Ablation study report: statistics and LaTeX table (Table III).
 
 Loads ablation per-image results, computes paired Wilcoxon tests against the
 stored DSP results, and applies Bonferroni and Holm–Bonferroni corrections over
-the NEW ablation comparison family only.  The 12 original baseline comparisons
+the ablation comparison family only.  The 12 original baseline comparisons
 (3 baselines × 4 metrics, published in Table I) remain a separate Bonferroni
 family at α = 0.05/12 ≈ 0.004 and are NOT re-corrected here.
 
-Ablation Bonferroni family (new, separate from original 12)
+Ablation Bonferroni family (separate from the original 12)
 -----------------------------------------------------------
 Conditions × metrics:
   A1–A5 (5 ablation conditions)  × 4 metrics = 20
   k-Means Lab + constraints      × 4 metrics =  4
   -------------------------------------------------------
-  Total new comparisons                       = 24
+  Total ablation comparisons                  = 24
 
-  Extra vs originally planned 20 (5 ablations × 4): the 4 comparisons for
-  k-Means Lab + constraints were added post-hoc to include a constraint-matched
-  baseline directly in the ablation family.
+  The k-Means Lab + constraints comparisons are included in the ablation
+  family to assess a directly comparable, constraint-matched baseline.
 
 α_corrected_ablation = 0.05 / 24 ≈ 0.00208
 Holm–Bonferroni      = sort all 24 p-values ascending;
@@ -89,9 +88,8 @@ METRIC_HEADER = {
 # NOT used for correction here; listed for documentation only.
 N_ORIGINAL_COMPARISONS = 12
 
-# New ablation comparison family: 6 methods × 4 metrics = 24.
+# Ablation comparison family: 6 methods × 4 metrics = 24.
 # This is the family corrected in this report (separate from the original 12).
-# The extra 4 vs the planned 20 come from including k-Means Lab + constraints.
 N_NEW_COMPARISONS = len(ABLATION_METHOD_ORDER) * len(METRIC_COLS)  # 24
 
 # Grand total (documentation only; corrections are applied PER FAMILY).
@@ -192,7 +190,7 @@ def compute_ablation_stats(
         method, metric, n_pairs, mean_method, std_method, mean_dsp, std_dsp,
         wilcoxon_stat, p_value, cliffs_delta,
         sig_bonferroni, sig_holm
-    (Holm correction is applied across the N_NEW_COMPARISONS new tests ONLY;
+    (Holm correction is applied across the N_NEW_COMPARISONS ablation tests ONLY;
     Bonferroni is applied across the full N_TOTAL_COMPARISONS family.)
     """
     dsp_idx = dsp_df.set_index("image_id")
@@ -236,7 +234,7 @@ def compute_ablation_stats(
     # Bonferroni significance over the full family (36 comparisons)
     df["sig_bonferroni"] = df["p_value"] < ALPHA_BONFERRONI
 
-    # Holm–Bonferroni over the new comparisons only (24)
+    # Holm–Bonferroni over the ablation comparisons only (24)
     holm_mask = _holm_bonferroni(df["p_value"].tolist())
     df["sig_holm"] = holm_mask
 
@@ -603,7 +601,7 @@ def main(argv: list[str] | None = None) -> None:
         f"  Holm\u2013Bonferroni      : applied across {N_NEW_COMPARISONS} ablation comparisons "
         f"(see ablation_wilcoxon.csv / sig_holm column)\n"
         f"\n"
-        f"  Extra vs planned 20 (5 ablations \u00d7 4): the 4 k-Means Lab + constraints comparisons.\n"
+        f"  Included in the ablation family: the 4 k-Means Lab + constraints comparisons.\n"
         f"  Full comparison list ({N_NEW_COMPARISONS}):\n"
     )
     for method in ABLATION_METHOD_ORDER:

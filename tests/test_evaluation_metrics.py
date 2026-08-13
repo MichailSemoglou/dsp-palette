@@ -2,6 +2,7 @@
 """Unit tests for evaluation/metrics.py."""
 
 import logging
+import warnings
 
 import numpy as np
 import pandas as pd
@@ -122,6 +123,45 @@ def test_wilcoxon_vs_dsp_warns_and_returns_empty_when_dsp_absent(caplog):
         result = wilcoxon_vs_dsp(df)
     assert result.empty
     assert any("DSP" in msg or "dsp" in msg.lower() for msg in caplog.messages)
+
+
+def test_wilcoxon_skips_zero_variance_pairs_without_runtime_warning():
+    """Constant paired differences should be skipped, not passed to SciPy."""
+    rows = []
+    for i in range(10):
+        value = float(i + 1)
+        rows.append(
+            {
+                "image_id": f"img_{i:03d}",
+                "subset": "test",
+                "method": "dsp",
+                "min_pairwise_de2000": value,
+                "wcag_aa_coverage": 0.5,
+                "wcag_aaa_coverage": 0.3,
+                "reconstruction_error_de2000": value,
+                "harmony_alignment": 0.5,
+            }
+        )
+        rows.append(
+            {
+                "image_id": f"img_{i:03d}",
+                "subset": "test",
+                "method": "kmeans_rgb",
+                "min_pairwise_de2000": value,
+                "wcag_aa_coverage": 0.5,
+                "wcag_aaa_coverage": 0.3,
+                "reconstruction_error_de2000": value,
+                "harmony_alignment": 0.5,
+            }
+        )
+    df = pd.DataFrame(rows)
+
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        result = wilcoxon_vs_dsp(df)
+
+    assert result.empty
+    assert not any("invalid value encountered" in str(w.message).lower() for w in caught)
 
 
 def test_wilcoxon_skips_method_with_few_observations(caplog):

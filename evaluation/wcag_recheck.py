@@ -30,7 +30,7 @@ This script:
 
 Usage
 -----
-    python3 -m research.evaluation.wcag_recheck
+    python3 -m evaluation.wcag_recheck
 """
 
 from __future__ import annotations

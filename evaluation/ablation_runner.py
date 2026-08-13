@@ -15,11 +15,11 @@ in a format consistent with the main runner's ``results/raw/`` JSON schema.
 
 Usage
 -----
-    python -m research.evaluation.ablation_runner \\
-        --manifest  corpus/manifest.json \\
-        --corpus-root corpus/ \\
-        --results-dir results/raw/ \\
-        --ablation-dir results/ablation/raw/ \\
+    python -m evaluation.ablation_runner \
+        --manifest  corpus/manifest.json \
+        --corpus-root corpus/ \
+        --results-dir results/raw/ \
+        --ablation-dir results/ablation/raw/ \
         --n 5
 
 Condition keys written to output JSON
@@ -43,6 +43,8 @@ from pathlib import Path
 
 import numpy as np
 from PIL import Image
+
+logger = __import__("logging").getLogger(__name__)
 
 # ---------------------------------------------------------------------------
 # Project imports
@@ -154,7 +156,20 @@ def main(argv: list[str] | None = None) -> None:
         help="Output directory for ablation per-image JSON files.",
     )
     parser.add_argument("--n", type=int, default=5, help="Target palette size.")
+    parser.add_argument(
+        "--quiet",
+        action="store_true",
+        help="Only show warnings and errors; suppress progress output.",
+    )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Show informational progress output even when quiet mode is not set.",
+    )
     args = parser.parse_args(argv)
+
+    level = logging.WARNING if args.quiet else logging.INFO if args.verbose else logging.WARNING
+    logging.basicConfig(level=level, format="%(levelname)s %(message)s")
 
     manifest_path = Path(args.manifest)
     corpus_root = Path(args.corpus_root)
@@ -171,27 +186,26 @@ def main(argv: list[str] | None = None) -> None:
         e for e in manifest
         if e.get("subset") == "photographs" and not e.get("dev", False)
     ]
-    print(f"Test set: {len(test_entries)} images (val2017, dev=False).")
+    logger.info("Test set: %s images (val2017, dev=False).", len(test_entries))
 
     # ------------------------------------------------------------------
     # Assert A3 reproduces DSP before proceeding
     # ------------------------------------------------------------------
-    print("\nAsserting A3 (full DSP reproducer) matches stored DSP metrics...")
+    logger.info("Asserting A3 (full DSP reproducer) matches stored DSP metrics...")
     try:
         assert_a3_reproduces_dsp(results_dir, tolerance=1e-4, n_check=len(test_entries))
     except AssertionError as exc:
-        print(f"\nFAIL  A3 assertion failed:\n  {exc}", file=sys.stderr)
-        print(
-            "\nAborting.  The ablation runner will NOT overwrite existing results.\n"
-            "Do not modify the DSP pipeline to force this assertion to pass.",
-            file=sys.stderr,
+        logger.error("A3 assertion failed: %s", exc)
+        logger.error(
+            "Aborting. The ablation runner will NOT overwrite existing results. "
+            "Do not modify the DSP pipeline to force this assertion to pass."
         )
         sys.exit(1)
 
     # ------------------------------------------------------------------
     # Run ablation conditions on every test image
     # ------------------------------------------------------------------
-    print("\nRunning ablation conditions on test images...\n")
+    logger.info("Running ablation conditions on test images...")
     total_wall = time.perf_counter()
 
     for i, entry in enumerate(test_entries, 1):
@@ -201,7 +215,7 @@ def main(argv: list[str] | None = None) -> None:
         img_path = corpus_root / subset / filename
 
         if not img_path.exists():
-            print(f"  [{i:3d}/{len(test_entries)}]  SKIP  {image_id}  (file missing)")
+            logger.warning("[%03d/%03d] SKIP %s (file missing)", i, len(test_entries), image_id)
             continue
 
         with warnings.catch_warnings():
@@ -226,12 +240,14 @@ def main(argv: list[str] | None = None) -> None:
         # Progress heartbeat every 10 images
         if i % 10 == 0 or i == len(test_entries):
             elapsed_so_far = time.perf_counter() - total_wall
-            print(f"  [{i:3d}/{len(test_entries)}]  {elapsed_so_far:.1f}s elapsed")
+            logger.info("[%03d/%03d] %0.1fs elapsed", i, len(test_entries), elapsed_so_far)
 
     total_elapsed = time.perf_counter() - total_wall
-    print(
-        f"\nDone.  {len(test_entries)} images processed in {total_elapsed:.1f}s.\n"
-        f"Results written to: {ablation_dir}"
+    logger.info(
+        "Done. %s images processed in %0.1fs. Results written to: %s",
+        len(test_entries),
+        total_elapsed,
+        ablation_dir,
     )
 
 

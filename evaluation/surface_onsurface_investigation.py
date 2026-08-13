@@ -1,5 +1,5 @@
 """
-Task 8: Investigate the Surface/On-Surface AA anomaly.
+Investigate the Surface/On-Surface AA anomaly.
 
 DSP's role-assigned Surface/On-Surface pair failed AA on 1 of 75 images,
 while k-Means Lab and k-Means RGB passed on all 75.  This script finds that
@@ -139,7 +139,7 @@ def _analyse_method(method_data: dict) -> dict:
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(
-        description="Investigate Surface/On-Surface WCAG AA anomaly (Task 8).",
+        description="Investigate Surface/On-Surface WCAG AA anomaly.",
     )
     parser.add_argument("--results-dir", required=True)
     parser.add_argument("--manifest",    required=True)
@@ -181,7 +181,7 @@ def main(argv: list[str] | None = None) -> None:
 
     sep = "=" * 72
     print(f"\n{sep}")
-    print("SURFACE / ON-SURFACE WCAG AA INVESTIGATION (Task 8)")
+    print("SURFACE / ON-SURFACE WCAG AA INVESTIGATION")
     print(sep)
 
     print(f"\nDSP role-pair AA failures: {len(dsp_fail)} of {len(dsp_df)}")

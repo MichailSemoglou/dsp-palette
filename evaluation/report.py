@@ -1,5 +1,5 @@
 
-"""Day 6 report generation: figures and LaTeX tables for the APSIPA paper.
+"""Report generation: figures and LaTeX tables for the APSIPA paper.
 
 Outputs
 -------
@@ -1069,7 +1069,7 @@ def main() -> None:
         format="%(levelname)s %(message)s",
     )
     parser = argparse.ArgumentParser(
-        description="Generate all Day 6 figures and tables for the APSIPA paper."
+        description="Generate figures and summary tables for the APSIPA paper."
     )
     parser.add_argument("--results-dir",     default="results/raw/")
     parser.add_argument("--aggregated-dir",  default="results/aggregated/")
@@ -1142,7 +1142,7 @@ def main() -> None:
             tau_results_cache=tau_results_cache if tau_results_cache else None,
         )
 
-    logger.info("=== Day 6 complete. Outputs in %s ===", figures_dir)
+    logger.info("=== Report generation complete. Outputs in %s ===", figures_dir)
 
 
 if __name__ == "__main__":

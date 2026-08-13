@@ -7,7 +7,7 @@ Results include palette colours, role assignments, and all 4 metrics.
 
 Usage
 -----
-    python -m research.evaluation.runner \
+    python -m evaluation.runner \
         --manifest corpus/manifest.json \
         --corpus-root corpus/ \
         --results-dir results/raw/ \

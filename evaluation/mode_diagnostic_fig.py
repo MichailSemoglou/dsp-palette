@@ -1,6 +1,6 @@
 """
 Generate mode_comparison_diagnostic.pdf and role-agreement count.
-Run with: python3 -m research.evaluation.mode_diagnostic_fig
+Run with: python3 -m evaluation.mode_diagnostic_fig
 """
 import json
 import sys
